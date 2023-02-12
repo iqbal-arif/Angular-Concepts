@@ -1,2 +1,2 @@
 # Angular-Concepts
-Angular Concepts
+Angular Course
