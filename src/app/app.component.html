@@ -706,9 +706,10 @@
       <span>Build for Production</span>
     </button>
   </div>
-
+  <!-- INPUT CLASS -->
+  <input type="text" class="demo" [value]="'data.title'" />
   <!-- Terminal -->
-  <div class="terminal" [ngSwitch]="selection.value">
+  <div class="terminal" [ngSwitch]="selection.value" (click)="onLogoClicked()">
     <pre *ngSwitchDefault>ng generate component xyz</pre>
     <pre *ngSwitchCase="'material'">ng add @angular/material</pre>
     <pre *ngSwitchCase="'pwa'">ng add @angular/pwa</pre>

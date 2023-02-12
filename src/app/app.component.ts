@@ -14,5 +14,14 @@ export class AppComponent {
   data = {
     title: 'Angular-Course',
   };
+
+  // Click Event
+  onLogoClicked() {
+    alert('Hello World');
+  }
 }
 // {{title}} : is a javascript expression is called  interpolation syntax  gives access to data
+
+/****Angular Main Features */
+// 1. Defining Custom HTML element.
+// 2. Build program with data available at Level of Component. Data and Views are bind with {{}}
