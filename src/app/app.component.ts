@@ -19,6 +19,8 @@ export class AppComponent {
   onLogoClicked() {
     alert('Hello World');
   }
+
+  onKeyUp() {}
 }
 // {{title}} : is a javascript expression is called  interpolation syntax  gives access to data
 

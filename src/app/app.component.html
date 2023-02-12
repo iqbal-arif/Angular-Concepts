@@ -707,8 +707,16 @@
     </button>
   </div>
   <!-- INPUT CLASS -->
-  <input type="text" class="demo" [value]="'data.title'" />
+  <!-- Added Template Reference -->
+  <input
+    type="text"
+    class="demo"
+    (keyup)="onKeyUp()"
+    [value]="'data.title'"
+    #titleInput
+  />
   <!-- Terminal -->
+  <!-- Added CLICK EVENT -->
   <div class="terminal" [ngSwitch]="selection.value" (click)="onLogoClicked()">
     <pre *ngSwitchDefault>ng generate component xyz</pre>
     <pre *ngSwitchCase="'material'">ng add @angular/material</pre>
