@@ -427,7 +427,12 @@
   <p>Here are some links to help you get started:</p>
   <!-- INPUT CLASS -->
   <!-- Added Template Reference -->
-  <input class="demo" [value]="data.title" #titleInput />
+  <input
+    class="demo"
+    [value]="data.title"
+    #titleInput
+    (keyup)="onKeyUp(titleInput.value)"
+  />
   <div class="card-container">
     <a
       class="card"

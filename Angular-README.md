@@ -26,6 +26,9 @@ Angular Concepts
       <input type="text" class="demo" [value]="'data.title'" />
       Result: Value of data.title = data.title
    5. Using Template Reference in HTML input level : #titleInput
-      1. Add (keyup)="onKeyUp()".
-      2. Add this keyUp() event to app.component.ts
-      3. Taking the input value from the template reference (keyup)="onKeyUp(titleInput.value)"
+      1. Add #titleInput reference to input tag.
+      2. Add (keyup)="onKeyUp()" after that.
+      3. Add this keyUp() event to app.component.ts
+      4. Taking the input value from the template reference(keyup)="onKeyUp(titleInput.value)"
+      5. Adding onKeyUp(newTitle: string) {this.data.title = newTitle;}
+      6. Modify the filed will modify the Heading automatically.
