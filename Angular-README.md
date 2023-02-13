@@ -37,3 +37,12 @@ Angular Concepts
       title:'<h1>Angular-Course</h1>'
    2. If script is entered in the filed it will be treated as a plain text again.
       title:'<script>alert("Alert")</script>'
+
+Angular Core Features
+
+1. Custom Tags in index.html: <body> <app-root></app-root></body>
+   Ability to define Custom Tags with extended Standard Browser Functionality.
+2. Separation between Data Model and View Template of App
+3. AppComponent Interact for data model and template
+4. Builtin change detection mechanism, that is transparent and automatically synchronizes data with views.
+5. Update are done in a secure way.
