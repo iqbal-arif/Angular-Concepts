@@ -1,5 +1,7 @@
 # Angular-Concepts
 
+Downloadable Files
+https://github.com/angular-university/angular-course
 Angular Concepts
 
 1. Install Angular cli Command line Interface:
@@ -23,4 +25,7 @@ Angular Concepts
    4. If value property value is covered with single'' it becomes plain HTML property
       <input type="text" class="demo" [value]="'data.title'" />
       Result: Value of data.title = data.title
-   5. Set Template Reference: #titleInput
+   5. Using Template Reference in HTML input level : #titleInput
+      1. Add (keyup)="onKeyUp()".
+      2. Add this keyUp() event to app.component.ts
+      3. Taking the input value from the template reference (keyup)="onKeyUp(titleInput.value)"

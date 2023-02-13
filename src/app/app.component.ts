@@ -20,7 +20,9 @@ export class AppComponent {
     alert('Hello World');
   }
 
-  onKeyUp() {}
+  onKeyUp(newTitle: string) {
+    this.data.title = newTitle;
+  }
 }
 // {{title}} : is a javascript expression is called  interpolation syntax  gives access to data
 

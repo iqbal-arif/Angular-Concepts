@@ -425,7 +425,9 @@
   <!-- Resources -->
   <h2>Resources</h2>
   <p>Here are some links to help you get started:</p>
-
+  <!-- INPUT CLASS -->
+  <!-- Added Template Reference -->
+  <input class="demo" [value]="data.title" #titleInput />
   <div class="card-container">
     <a
       class="card"
@@ -706,15 +708,7 @@
       <span>Build for Production</span>
     </button>
   </div>
-  <!-- INPUT CLASS -->
-  <!-- Added Template Reference -->
-  <input
-    type="text"
-    class="demo"
-    (keyup)="onKeyUp()"
-    [value]="'data.title'"
-    #titleInput
-  />
+
   <!-- Terminal -->
   <!-- Added CLICK EVENT -->
   <div class="terminal" [ngSwitch]="selection.value" (click)="onLogoClicked()">
