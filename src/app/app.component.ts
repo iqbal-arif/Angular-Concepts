@@ -13,6 +13,8 @@ export class AppComponent {
   // 2. Modified as an Object
   data = {
     title: 'Angular-Course',
+    // Will HTML Tag and Script will not interpret as HTML or JavaScript, but as a plain text
+    // title:'<h1>Angular-Course</h1><script>alert("Alert")</script>'
   };
 
   // Click Event

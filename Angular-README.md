@@ -32,3 +32,8 @@ Angular Concepts
       4. Taking the input value from the template reference(keyup)="onKeyUp(titleInput.value)"
       5. Adding onKeyUp(newTitle: string) {this.data.title = newTitle;}
       6. Modify the filed will modify the Heading automatically.
+4. Angular Built-in Feature:
+   1. If some HTML tag is added it will interpret as plain text
+      title:'<h1>Angular-Course</h1>'
+   2. If script is entered in the filed it will be treated as a plain text again.
+      title:'<script>alert("Alert")</script>'
