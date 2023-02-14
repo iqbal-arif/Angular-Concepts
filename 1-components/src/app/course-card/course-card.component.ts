@@ -1,5 +1,6 @@
 import { Component, Input } from "@angular/core";
 import { COURSES } from "src/db-data";
+import { Course } from "../model/course";
 
 @Component({
   selector: "course-card",
@@ -8,6 +9,9 @@ import { COURSES } from "src/db-data";
 })
 export class CourseCardComponent {
   @Input()
-  title: string;
+  //Defines only the title property of the course object
+  // title: string;
+  // Defines complete course object importing from course model
+  course: Course;
   constructor() {}
 }

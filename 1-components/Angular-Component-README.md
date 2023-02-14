@@ -19,6 +19,14 @@
 7. Right way to define the input property in HTML is;
    1. Define title string in course-card.component.ts annotated with angular input decorator
    2. Define title property in app.component.html
-      <course-card [title]="rxjsCourse.description"></course-card> in
+      <course-card [title]="coreCourse.description"></course-card> in
    3. Define title heading at component level in course-card.component.html
       <div class="course-title">{{ title }}</div>
+8. To bring the Object Types in Data Model
+   1. Define Custom JS Object types in model/course.ts
+   2. Import course object in component level
+      @Input()
+      // Defines complete course object importing from course model
+      course: Course;
+   3. Import Course properties at component level in course-card.components.html
+   4. Import Course Component at App level in app.component.html
