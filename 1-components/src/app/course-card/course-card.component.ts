@@ -14,6 +14,9 @@ export class CourseCardComponent {
   // Defines complete course object importing from course model
   course: Course;
 
+  @Input()
+  // Define Card Index Input Variable
+  cardIndex: number;
   // Emit Course Event to
   @Output("courseSelected")
   courseEmitter = new EventEmitter<Course>();

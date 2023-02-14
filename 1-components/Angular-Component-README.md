@@ -30,7 +30,8 @@
       course: Course;
    3. Import Course properties at component level in course-card.components.html
    4. Import Course Component at App level in app.component.html
-9. Component @Output - Custom Events & Event Emitters
+      /**\*\*\*\*** Component @Output - Custom Events & Event Emitters \***\*\*\*\***/
+9. Custom Events & Events Emitters
    1. Define Event at component level in html
    2. Define Event handler at component level in ts
    3. Define Event at App level in the component tag
@@ -46,4 +47,8 @@
    13. Standard browser Event bubble from component to all the way up to app level
    14. Custom Event Name can be made different for App & Component level:
    15. Change event name to courseEmitter at component level
-   16. Add App event handler to Output decorator as a parameter.
+   16. Add App event handler name to Output decorator as a parameter to be linked to App
+       /\***\*\*\*\*** Angular ngFor Core Directives \***\*\*\*\*\***/
+10. ngFor Directives
+    1. Import COURSES object at App level
+    2. Define for loop at App level with \*ngFor

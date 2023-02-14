@@ -9,7 +9,8 @@
 <div class="courses">
   <!-- This code was define when title example was explained -->
   <!-- <course-card [title]="coreCourse.description"></course-card> -->
-  <course-card
+  <!-- This code was define when Course EventEmitter was performed -->
+  <!-- <course-card
     (courseSelected)="onCourseSelected($event)"
     [course]="coreCourse"
   ></course-card>
@@ -20,5 +21,12 @@
   <course-card
     (courseSelected)="onCourseSelected($event)"
     [course]="ngrxCourse"
+  ></course-card> -->
+  <!-- Importing All Course Through ngFor Loop through Array -->
+  <course-card
+    *ngFor="let course of courses; index as i"
+    (courseSelected)="onCourseSelected($event)"
+    [course]="course"
+    [cardIndex]="i + 1"
   ></course-card>
 </div>
