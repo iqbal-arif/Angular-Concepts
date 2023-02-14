@@ -40,4 +40,10 @@
    7. Define EventEmitter at component level in ts annotated with angular Output decorator
    8. Emit the Course at component level in ts
    9. Define course parameter for onCourseSelected()
-   10. Enter $event as a paramter for (courseSelected)="onCourseSelected($event)" to display course.
+   10. Enter $event as a parameter for (courseSelected)="onCourseSelected($event)" to display course.
+   11. Event Bubbling:
+   12. Custom Event do not bubble up vs standard event
+   13. Standard browser Event bubble from component to all the way up to app level
+   14. Custom Event Name can be made different for App & Component level:
+   15. Change event name to courseEmitter at component level
+   16. Add App event handler to Output decorator as a parameter.

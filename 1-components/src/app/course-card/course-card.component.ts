@@ -15,13 +15,13 @@ export class CourseCardComponent {
   course: Course;
 
   // Emit Course Event to
-  @Output()
-  courseSelected = new EventEmitter<Course>();
+  @Output("courseSelected")
+  courseEmitter = new EventEmitter<Course>();
 
   constructor() {}
   // Event Handler
   onCourseViewed() {
     console.log("card component - button Clicked...");
-    this.courseSelected.emit(this.course);
+    this.courseEmitter.emit(this.course);
   }
 }
