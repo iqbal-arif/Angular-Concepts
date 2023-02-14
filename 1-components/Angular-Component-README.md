@@ -37,5 +37,7 @@
    4. Define Event Handler at App level in ts
    5. Results: When button is clicked both events are triggered.
    6. Replace Click event in App to Custom Event as courseSelected(onCourseSelected)
-   7. Define Event Handler at component level in ts
-   8. Emit the Event at component level in ts
+   7. Define EventEmitter at component level in ts annotated with angular Output decorator
+   8. Emit the Course at component level in ts
+   9. Define course parameter for onCourseSelected()
+   10. Enter $event as a paramter for (courseSelected)="onCourseSelected($event)" to display course.

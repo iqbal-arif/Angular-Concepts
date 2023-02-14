@@ -1,4 +1,4 @@
-import { Component, Input, EventEmitter } from "@angular/core";
+import { Component, Input, EventEmitter, Output } from "@angular/core";
 import { COURSES } from "src/db-data";
 import { Course } from "../model/course";
 
@@ -15,6 +15,7 @@ export class CourseCardComponent {
   course: Course;
 
   // Emit Course Event to
+  @Output()
   courseSelected = new EventEmitter<Course>();
 
   constructor() {}
