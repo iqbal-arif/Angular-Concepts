@@ -38,7 +38,7 @@ Angular Concepts
    2. If script is entered in the filed it will be treated as a plain text again.
       title:'<script>alert("Alert")</script>'
 
-Angular Core Features
+/**\*\*\*\*** Angular Core Features \***\*\*\*\*\*\***/
 
 1. Custom Tags in index.html: <body> <app-root></app-root></body>
    Ability to define Custom Tags with extended Standard Browser Functionality.
@@ -46,3 +46,11 @@ Angular Core Features
 3. AppComponent Interact for data model and template
 4. Builtin change detection mechanism, that is transparent and automatically synchronizes data with views.
 5. Update are done in a secure way.
+
+/**\*\*\*\*** Angular Components & Core Directives \***\*\*\*\*\*\***/
+
+1. https://github.com/angular-university/angular-course
+2. Go to branch components and
+3. git checkout -b 1-components origin/1-components
+4. Run npm install
+5.
