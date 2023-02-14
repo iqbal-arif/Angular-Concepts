@@ -9,7 +9,10 @@
 <div class="courses">
   <!-- This code was define when title example was explained -->
   <!-- <course-card [title]="coreCourse.description"></course-card> -->
-  <course-card [course]="coreCourse"></course-card>
+  <course-card
+    (courseSelected)="onCourseSelected($event)"
+    [course]="coreCourse"
+  ></course-card>
   <course-card [course]="rxjsCourse"></course-card>
   <course-card [course]="ngrxCourse"></course-card>
 </div>
