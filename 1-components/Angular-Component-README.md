@@ -30,3 +30,12 @@
       course: Course;
    3. Import Course properties at component level in course-card.components.html
    4. Import Course Component at App level in app.component.html
+9. Component @Output - Custom Events & Event Emitters
+   1. Define Event at component level in html
+   2. Define Event handler at component level in ts
+   3. Define Event at App level in the component tag
+   4. Define Event Handler at App level in ts
+   5. Results: When button is clicked both events are triggered.
+   6. Replace Click event in App to Custom Event as courseSelected(onCourseSelected)
+   7. Define Event Handler at component level in ts
+   8. Emit the Event at component level in ts
