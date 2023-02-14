@@ -51,6 +51,5 @@ Angular Concepts
 
 1. https://github.com/angular-university/angular-course
 2. Go to branch components and
-3. git checkout -b 1-components origin/1-components
+3. git checkout 1-components ( best option is download and paste it in 1-components folder)
 4. Run npm install
-5.
