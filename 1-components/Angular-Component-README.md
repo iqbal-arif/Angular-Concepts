@@ -159,3 +159,10 @@
     <div class="category" *ngSwitchDefault>All Levels</div>
     </div>
     </ng-container>
+       /\***\*\*\*\*** Angular Built-in Pipes Complete Catalog \***\*\*\*\*\***/
+16. A Template mechanism use to transform data and display in another form to user
+    1. Define Data Model in app level: startDate = new Date(2023, 1, 1);
+    2. Define View Model in app level:
+       1. Standard Format: <div>Start Date: {{ startDate | date }}</div>
+       2. 02/01/2023 Format: {{ startDate | date : "MM/dd/yyyy" }}
+       3. Feb/01/2023 Format: {{ startDate | date : "MMM/dd/yyyy" }}
