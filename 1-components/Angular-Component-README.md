@@ -52,3 +52,29 @@
 10. ngFor Directives
     1. Import COURSES object at App level
     2. Define for loop at App level with \*ngFor
+    3. ng Index Feature
+       1. ng Indexing : Define Card indexing at App level
+          <course-card
+          \*ngFor="let course of courses; index as i" // index feature "index as i"
+          (courseSelected)="onCourseSelected($event)"
+          [course]="course"
+          [cardIndex]="i + 1" // This property increments the index, where i=0
+          > </course-card>
+       2. ng CSS Border Styling: Top and Bottom Border CSS Styling
+          \*ngFor="let course of courses; index as i; first as isFirst; last as isLast"
+          [class.is-first]="isFirst"
+          [class.is-last]="isLast"
+       3. ng CSS Card Color Styling: Even & Odd
+          <course-card
+          \*ngFor="
+          let course of courses;
+          index as i;
+          first as isFirst;
+          last as isLast;
+          even as isEven;
+          odd as isOdd
+          "
+          [class.is-first]="isFirst"
+          [class.is-last]="isLast"
+          [class.is-even]="isEven"
+          [class.is-odd]="isOdd"
