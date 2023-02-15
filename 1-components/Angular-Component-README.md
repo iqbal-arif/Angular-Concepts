@@ -79,7 +79,7 @@
           [class.is-even]="isEven"
           [class.is-odd]="isOdd"
           /\***\*\*\*\*** Angular ngIf Core Directive & Elvis Operator \***\*\*\*\*\***/
-11. ngIf Directives
+11. ngIf Directives: Used in for Two possibilities only
     1. ngIf ="Boolean"
        1. ngIf="false": Removes not only the image but also the screen html tag from Template.
     2. ngIf can take Boolean, JS Expression, it can coerce strings, methods as well.
@@ -135,3 +135,27 @@
     <div class="category" *ngSwitchCase="'INTERMEDIATE'">Intermediate</div>
     <div class="category" *ngSwitchCase="'ADVANCED'">Advanced</div>
     <div class="category" *ngSwitchDefault>All Levels</div>
+       /\***\*\*\*\*** Angular ng-container Core Directive \***\*\*\*\*\***/
+15. ng-container
+    1. No Parent DIV available for ngIf:
+       1. Create container :<ng-container \*ngIf="course">Rest of the code here</ng-container>
+    2. No Parent DIV for ngSwitch:
+    <ng-container [ngSwitch]="course.category">
+    <div class="course-category" >
+    <div class="category" *ngSwitchCase="'BEGINNER'">Beginner</div>
+    <div class="category" *ngSwitchCase="'INTERMEDIATE'">Intermediate</div>
+    <div class="category" *ngSwitchCase="'ADVANCED'">Advanced</div>
+    <div class="category" *ngSwitchDefault>All Levels</div>
+    </div>
+    </ng-container>
+    3. ng-container within a container
+    <ng-container [ngSwitch]="course.category">
+    <div class="course-category">
+    <ng-container *ngSwitchCase="'BEGINNER'">
+    <div class="category">Beginner</div>
+    </ng-container>
+    <div class="category" *ngSwitchCase="'INTERMEDIATE'">Intermediate</div>
+    <div class="category" *ngSwitchCase="'ADVANCED'">Advanced</div>
+    <div class="category" *ngSwitchDefault>All Levels</div>
+    </div>
+    </ng-container>
