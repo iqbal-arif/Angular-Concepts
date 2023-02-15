@@ -78,3 +78,15 @@
           [class.is-last]="isLast"
           [class.is-even]="isEven"
           [class.is-odd]="isOdd"
+          /\***\*\*\*\*** Angular ngIf Core Directive & Elvis Operator \***\*\*\*\*\***/
+11. nqIf Directives
+    1. ngIf ="Boolean"
+       1. ngIf="false": Removes not only the image but also the screen html tag from Template.
+    2. ngIf can take Boolean, JS Expression, it can coerce strings, methods as well.
+    3. ngIf="Method()"
+       1. ngIf="isImageVisible()" Method defined at App level
+       2. Function defined at component level
+          isImageVisible() {
+          //course property is defined & course iconUrl is visible
+          return this.course && this.course.iconUrl;
+          }

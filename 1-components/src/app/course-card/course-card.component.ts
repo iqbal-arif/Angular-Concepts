@@ -22,6 +22,12 @@ export class CourseCardComponent {
   courseEmitter = new EventEmitter<Course>();
 
   constructor() {}
+  // Image Visibility Method
+  isImageVisible() {
+    //course property is defined & course iconUrl is visible
+    return this.course && this.course.iconUrl;
+  }
+
   // Event Handler
   onCourseViewed() {
     console.log("card component - button Clicked...");
