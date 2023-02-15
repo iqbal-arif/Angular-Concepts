@@ -33,4 +33,12 @@ export class CourseCardComponent {
     console.log("card component - button Clicked...");
     this.courseEmitter.emit(this.course);
   }
+
+  // Classes Method
+  cardClasses() {
+    return {
+      "course-card": true,
+      beginner: this.course.category === "BEGINNER",
+    };
+  }
 }

@@ -79,7 +79,7 @@
           [class.is-even]="isEven"
           [class.is-odd]="isOdd"
           /\***\*\*\*\*** Angular ngIf Core Directive & Elvis Operator \***\*\*\*\*\***/
-11. nqIf Directives
+11. ngIf Directives
     1. ngIf ="Boolean"
        1. ngIf="false": Removes not only the image but also the screen html tag from Template.
     2. ngIf can take Boolean, JS Expression, it can coerce strings, methods as well.
@@ -98,3 +98,21 @@
        <ng-template #noImage>
        <p>No Image is Available</p>
        </ng-template>
+          /\***\*\*\*\*** Angular ngClass Core Directive & Elvis Operator \***\*\*\*\*\***/
+12. ngClass Types
+    1. Class as a String:
+       1. Class as a singel String: [ngClass]="'beginner'"
+       2. Class as a multiple String: [ngClass]="'course-card beginner'"
+    2. Class as an Array:
+       1. Class Array: [ngClass]="['course-card', 'beginner']"
+    3. Class as a Configuration Object
+       1. Class Object: [ngClass]="{'course-card':true, 'beginner':false}"
+    4. Recommended Approach:
+       1. Define Class Method: [ngClass]="cardClasses()" at App Level
+       2. Define Function at Component Level:
+          cardClasses() {
+          return {
+          "course-card": true,
+          beginner: this.course.category === "BEGINNER",
+          };
+          }
