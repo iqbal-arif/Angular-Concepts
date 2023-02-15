@@ -126,3 +126,12 @@
        cardStyles() {
        return { "text-decoration": "underline", color: "red" };
        }
+       /\***\*\*\*\*** Angular ngSwitch Core Directive \***\*\*\*\*\***/
+14. ngSwitch
+    1. Similar to JS Switch Statement. Used in multiple Possibilities
+    2. Define [ngSwitch]="course.category"
+    3. Define HTML tag possibilities based on course db.
+    <div class="category" *ngSwitchCase="'BEGINNER'">Beginner</div>
+    <div class="category" *ngSwitchCase="'INTERMEDIATE'">Intermediate</div>
+    <div class="category" *ngSwitchCase="'ADVANCED'">Advanced</div>
+    <div class="category" *ngSwitchDefault>All Levels</div>
