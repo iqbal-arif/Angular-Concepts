@@ -90,3 +90,11 @@
           //course property is defined & course iconUrl is visible
           return this.course && this.course.iconUrl;
           }
+    4. Undefined Object passed into data model
+       1. use ngIf="course" at component level
+    5. ng-Template for noImage in one of the cards
+       1. ngIf="isImageVisible(); else noImage define as property
+       2. else clause takes the next HTML tag to display for image invisibility
+       <ng-template #noImage>
+       <p>No Image is Available</p>
+       </ng-template>
