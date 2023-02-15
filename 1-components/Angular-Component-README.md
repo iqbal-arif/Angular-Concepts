@@ -98,8 +98,8 @@
        <ng-template #noImage>
        <p>No Image is Available</p>
        </ng-template>
-          /\***\*\*\*\*** Angular ngClass Core Directive & Elvis Operator \***\*\*\*\*\***/
-12. ngClass Types
+          /\***\*\*\*\*** Angular ngClass Core Directive \***\*\*\*\*\***/
+12. ngClass Types (This is normally used in Industry)
     1. Class as a String:
        1. Class as a singel String: [ngClass]="'beginner'"
        2. Class as a multiple String: [ngClass]="'course-card beginner'"
@@ -116,3 +116,13 @@
           beginner: this.course.category === "BEGINNER",
           };
           }
+          /\***\*\*\*\*** Angular ngStyle Core Directive \***\*\*\*\*\***/
+13. ngStyle (This is used when needed for specific component or need)
+    1. CSS style to Components directly: [style.text-decoration]="'underline'".
+       For each style we would need to repeat this code multiple times.
+    2. ngStyle: For multiple CSS property  
+       [ngStyle]="{ 'text-decoration': 'underline', color: 'red' }"
+    3. ngStyle by Method:
+       cardStyles() {
+       return { "text-decoration": "underline", color: "red" };
+       }

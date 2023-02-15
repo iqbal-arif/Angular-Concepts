@@ -41,4 +41,8 @@ export class CourseCardComponent {
       return "beginner"; // this return can be a string or array string
     }
   }
+  // Styles Method
+  cardStyles() {
+    return { "text-decoration": "underline", color: "red" };
+  }
 }
