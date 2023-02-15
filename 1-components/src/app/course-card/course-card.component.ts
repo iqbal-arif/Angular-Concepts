@@ -36,9 +36,9 @@ export class CourseCardComponent {
 
   // Classes Method
   cardClasses() {
-    return {
-      "course-card": true,
-      beginner: this.course.category === "BEGINNER",
-    };
+    if (this.course.category === "BEGINNER") {
+      // return ["beginner"]; // this return can be a string or array string
+      return "beginner"; // this return can be a string or array string
+    }
   }
 }
