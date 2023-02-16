@@ -12,6 +12,12 @@
   <div>{{ price | currency : "GBP" }}</div>
 
   <div>Percentage : {{ rate | percent }}</div>
+  <!-- View fOR JSON Pipe -->
+  <!-- <div>{{ courses | json }}</div> -->
+  <!-- Object Key Value Pipe -->
+  <div *ngFor="let pair of course | keyvalue">
+    {{ pair.key + ":" + pair.value }}
+  </div>
 </div>
 
 <!-- This code was defined to explain how component properties can be displayed -->

@@ -20,6 +20,8 @@ export class AppComponent {
   price = 9.998989;
   // Percentile For Pipes
   rate = 0.67;
+  // Object Key Value Pipes
+  course = COURSES[1];
   // Start Date for Pipes
   startDate = new Date(2023, 1, 1);
   // Click Event Handler
