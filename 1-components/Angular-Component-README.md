@@ -180,3 +180,7 @@
        <div>{{ price | currency }}</div>
        <div>{{ price | currency | 'EUR'}}</div>
        <div>{{ price | currency | 'GBP'}}</div>
+    10. Define Percentile Data in App level: rate = .67;
+    11. Define Percentile View in App level: <div>Percentage : {{ rate | percent }}</div>
+    12. Array Slice Pipes in Angular: Slicing the array and display 1 & 2 card
+        <course-card \*ngFor=" let course of courses | slice : 0 : 2;">......</course-card>
