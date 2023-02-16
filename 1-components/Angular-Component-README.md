@@ -166,3 +166,8 @@
        1. Standard Format: <div>Start Date: {{ startDate | date }}</div>
        2. 02/01/2023 Format: {{ startDate | date : "MM/dd/yyyy" }}
        3. Feb/01/2023 Format: {{ startDate | date : "MMM/dd/yyyy" }}
+    3. Define Course Title in app level: title = COURSES[1].description;
+    4. Define Title View in App level: <div>{{ title }}</div>
+    5. Title in upper case: <div>{{ title | uppercase }}</div>
+    6. Title in lower case: <div>{{ title | lowercase }}</div>
+    7. Title in Capital case: <div>{{ title | titlecase }}</div>

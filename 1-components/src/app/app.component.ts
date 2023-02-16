@@ -15,7 +15,7 @@ export class AppComponent {
   // rxjsCourse = COURSES[1];
   // ngrxCourse = COURSES[2];
   // Title for Pipes
-  // title = COURSES[0].description;
+  title = COURSES[1].description;
   // Start Date for Pipes
   startDate = new Date(2023, 1, 1);
   // Click Event Handler
