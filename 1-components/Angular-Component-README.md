@@ -174,10 +174,9 @@
        <div>{{ title | titlecase }}</div>
     8. Define Price Data in App level: price = 9.99;
     9. Define Price View in App level: <div>{{ price }}</div>
-    10. No. of Decimal for Right and Left side:
-    3 for right and 3 to 5 for left decimal
-    <div>{{ price | number : "3.3-5" }}</div>
-    11. Currency Format: Default is US,
-    <div>{{ price | currency }}</div>
-    <div>{{ price | currency | 'EUR'}}</div>
-    <div>{{ price | currency | 'GBP'}}</div>
+       1. No. of Decimal for Right and Left side: 3 for right and 3 to 5 for left decimal
+       <div>{{ price | number : "3.3-5" }}</div>
+       2. Currency Format: Default is US,
+       <div>{{ price | currency }}</div>
+       <div>{{ price | currency | 'EUR'}}</div>
+       <div>{{ price | currency | 'GBP'}}</div>
