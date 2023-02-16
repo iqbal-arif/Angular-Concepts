@@ -166,8 +166,18 @@
        1. Standard Format: <div>Start Date: {{ startDate | date }}</div>
        2. 02/01/2023 Format: {{ startDate | date : "MM/dd/yyyy" }}
        3. Feb/01/2023 Format: {{ startDate | date : "MMM/dd/yyyy" }}
-    3. Define Course Title in app level: title = COURSES[1].description;
+    3. Define Course Title Data in app level: title = COURSES[1].description;
     4. Define Title View in App level: <div>{{ title }}</div>
     5. Title in upper case: <div>{{ title | uppercase }}</div>
     6. Title in lower case: <div>{{ title | lowercase }}</div>
-    7. Title in Capital case: <div>{{ title | titlecase }}</div>
+    7. Title in Capital case as Angular Core Deep Dive
+       <div>{{ title | titlecase }}</div>
+    8. Define Price Data in App level: price = 9.99;
+    9. Define Price View in App level: <div>{{ price }}</div>
+    10. No. of Decimal for Right and Left side:
+    3 for right and 3 to 5 for left decimal
+    <div>{{ price | number : "3.3-5" }}</div>
+    11. Currency Format: Default is US,
+    <div>{{ price | currency }}</div>
+    <div>{{ price | currency | 'EUR'}}</div>
+    <div>{{ price | currency | 'GBP'}}</div>

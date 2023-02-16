@@ -16,6 +16,8 @@ export class AppComponent {
   // ngrxCourse = COURSES[2];
   // Title for Pipes
   title = COURSES[1].description;
+  // Price for Pipes
+  price = 9.998989;
   // Start Date for Pipes
   startDate = new Date(2023, 1, 1);
   // Click Event Handler

@@ -8,6 +8,8 @@
 <div class="demo">
   <div>Start Date: {{ startDate | date : "MMM dd yyyy" }}</div>
   <div>{{ title | titlecase }}</div>
+  <div>{{ price | number : "3.3-5" }}</div>
+  <div>{{ price | currency : "GBP" }}</div>
 </div>
 
 <!-- This code was defined to explain how component properties can be displayed -->
