@@ -201,3 +201,11 @@
           This is an injection of component reference in App component
        3. Injection of Plain HTML in a App component
           1. Add HTML reference in App Template
+       4. Querying Component with Plain HTML Template Reference
+          1. For HTML Reference Instance:
+             add @ViewChild("cardRef", { read: ElementRef })
+             card: ElementRef;
+       5. ViewChild Query Depth
+          1. Restricted to component itself at App Component level, but not to Child component level.
+          2. Cannot Query several levels down the component directory.
+18. View Children Decorator

@@ -29,9 +29,11 @@ export class AppComponent {
   // Child Reference in App Component
   // A Template Query Mechanism:  Query Component Type
   // @ViewChild(CourseCardComponent) Querying Component by Class Name
-  // @ViewChild('cardRef') This is based on Component Template Reference
-  @ViewChild("cardRef")
-  card: CourseCardComponent;
+  // @ViewChild('cardRef') Querying Component Template Reference
+  // @ViewChild("cardRef",{read:ElementRef}) Querying Component Plain HTML Element Reference
+  @ViewChild("cardRef", { read: ElementRef })
+  // card: CourseCardComponent; Activate with Querying by Class or Component Reference Instance
+  card: ElementRef;
 
   // Querying HTML Element Type
   @ViewChild("container") // Querying by plain HTML Template Reference
