@@ -1,5 +1,6 @@
-import { Component } from "@angular/core";
+import { Component, ElementRef, ViewChild } from "@angular/core";
 import { COURSES } from "../db-data";
+import { CourseCardComponent } from "./course-card/course-card.component";
 import { Course } from "./model/course";
 
 @Component({
@@ -24,8 +25,24 @@ export class AppComponent {
   course = COURSES[1];
   // Start Date for Pipes
   startDate = new Date(2023, 1, 1);
+
+  // Child Reference in App Component
+  // A Template Query Mechanism:  Query Component Type
+  // @ViewChild(CourseCardComponent) Querying Component by Class Name
+  // @ViewChild('cardRef') This is based on Component Template Reference
+  @ViewChild("cardRef")
+  card: CourseCardComponent;
+
+  // Querying HTML Element Type
+  @ViewChild("container") // Querying by plain HTML Template Reference
+  containerDiv: ElementRef; // Handles native DOM elements
+
   // Click Event Handler
   onCourseSelected(course: Course) {
     console.log("App Component - Click event Bubbled....", course);
+    // Querying Card by Component Reference
+    console.log(this.card);
+    // Querying DIV by HTML Reference
+    console.log("containerDiv", this.containerDiv);
   }
 }

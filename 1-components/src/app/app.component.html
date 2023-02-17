@@ -22,7 +22,8 @@
 
 <!-- This code was defined to explain how component properties can be displayed -->
 <!-- <h1>{{ coreCourse.description }}</h1> -->
-<div class="courses">
+<!--Container is given a Template Reference  -->
+<div class="courses" #container>
   <!-- This code was define when title example was explained -->
   <!-- <course-card [title]="coreCourse.description"></course-card> -->
   <!-- This code was define when Course EventEmitter was performed -->
@@ -62,6 +63,7 @@
   ></course-card> -->
   <!-- Displaying a Single Card (First Card at index 1) without ngFor Loop, without special indexing and class attributes -->
   <course-card
+    #cardRef
     (courseSelected)="onCourseSelected($event)"
     [course]="courses[2]"
   >
