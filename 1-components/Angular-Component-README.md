@@ -185,7 +185,7 @@
     12. Array Slice Pipes in Angular: Slicing the array and display 1 & 2 card
         <course-card \*ngFor=" let course of courses | slice : 0 : 2;">......</course-card>
     13. JSON Pipes: <div>{{ courses | json }}</div>
-    14. Object Key Value Pipe:
-        1. Define Data Object at App level: course = COURSES[1];
-        2. Define View at App level:
-        <div *ngFor="let pair of course | keyvalue">{{ pair.key + ":" + pair.value }}</div>
+    14. Object Key Value Pipe: 1. Define Data Object at App level: course = COURSES[1]; 2. Define View at App level:
+        <div \*ngFor="let pair of course | keyvalue">{{ pair.key + ":" + pair.value }}</div>
+        /\***\*\*\*\*** Angular Template Querying View Child & View Children \***\*\*\*\*\***/
+17. A Decorators to perform Queries in Components Template.
