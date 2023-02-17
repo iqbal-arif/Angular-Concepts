@@ -1,6 +1,8 @@
 <div class="course-card" *ngIf="course" [ngClass]="cardClasses()">
   <div class="course-title" [ngStyle]="cardStyles()">
-    {{ cardIndex + " " + course.description }}
+    <!-- {{ cardIndex + " " + course.description }} Activate is code with ngFor Loop -->
+    <!--  cardIndex || "" Means if there is no card index then default is empty string-->
+    {{ cardIndex || "" + " " + course.description }}
   </div>
   <img
     width="300"
@@ -13,7 +15,7 @@
   </ng-template>
 
   <div class="course-description">
-    {{ course.longDescription }}
+    {{ course.description }}
   </div>
   <div class="course-category" [ngSwitch]="course.category">
     <div class="category" *ngSwitchCase="'BEGINNER'">Beginner</div>
