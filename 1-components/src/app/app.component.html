@@ -68,4 +68,10 @@
     [course]="courses[2]"
   >
   </course-card>
+  <course-card
+    *ngFor="let course of courses"
+    (courseSelected)="onCourseSelected($event)"
+    [course]="course"
+  >
+  </course-card>
 </div>

@@ -209,3 +209,5 @@
           1. Restricted to component itself at App Component level, but not to Child component level.
           2. Cannot Query several levels down the component directory.
 18. View Children Decorator
+    1. Query for Complete collection of cards in App Template
+       1.
