@@ -38,9 +38,12 @@
     (courseSelected)="onCourseSelected($event)"
     [course]="ngrxCourse"
   ></course-card> -->
+  <!-- The following code was to display all the cards through ngFor Loop -->
   <!-- Importing All Course Through ngFor Loop through Array -->
   <!-- With Slice pipe displaying only first & Second card -->
-  <course-card
+  <!-- Add Class Attributes to card in Even and Odd order -->
+  <!-- Displayed all Cards through EventEmitter and added indexing on each card -->
+  <!-- <course-card
     *ngFor="
       let course of courses | slice : 0 : 3;
       index as i;
@@ -56,5 +59,10 @@
     (courseSelected)="onCourseSelected($event)"
     [course]="course"
     [cardIndex]="i + 1"
+  ></course-card> -->
+  <!-- Displaying a Single Card (First Card at index 1) without ngFor Loop, without special indexing and class attributes -->
+  <course-card
+    (courseSelected)="onCourseSelected($event)"
+    [course]="course[1]"
   ></course-card>
 </div>
