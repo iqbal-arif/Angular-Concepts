@@ -189,3 +189,15 @@
         <div \*ngFor="let pair of course | keyvalue">{{ pair.key + ":" + pair.value }}</div>
         /\***\*\*\*\*** Angular Template Querying View Child & View Children \***\*\*\*\*\***/
 17. A Decorators to perform Queries in Components Template.
+    1. Display Single Card by adjusting the code for a card in App Template
+    2. Obtaining Child Reference in App Level Component.
+       1. Use @ViewChild(CourseCardComponent)
+          card: CourseCardComponent;
+       2. This works for a single card only.
+    3. Querying Multiple Views or Cards
+       1. Template Reference: Querying Based on Template Reference: #cardRef @ App Template
+       2. Use @ViewChild('cardRef')
+          card: CourseCardComponent;
+          This is an injection of component reference in App component
+       3. Injection of Plain HTML in a App component
+          1. Add HTML reference in App Template
