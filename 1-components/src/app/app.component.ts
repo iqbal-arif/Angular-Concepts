@@ -46,7 +46,7 @@ export class AppComponent implements AfterViewInit {
   // Querying HTML Element Type
   @ViewChild("container") // Querying by plain HTML Template Reference
   containerDiv: ElementRef; // Handles native DOM elements
-  // Querying Multiple Card Reference
+  // Querying Multiple Card Reference for Deep querying
   @ViewChildren(CourseCardComponent)
   cards: QueryList<CourseCardComponent>;
 

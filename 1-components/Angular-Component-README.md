@@ -210,4 +210,9 @@
           2. Cannot Query several levels down the component directory.
 18. View Children Decorator
     1. Query for Complete collection of cards in App Template
-       1.
+       1. @ViewChildren(CourseCardComponent)
+          cards: QueryList<CourseCardComponent>;
+       2. QueryList gives all the available methods need to perform on component
+       3. ngAfterViewInit() {
+          console.log(this.cards.first); // cards.first gives displays first card in the list
+          }
