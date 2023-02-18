@@ -216,3 +216,22 @@
        3. ngAfterViewInit() {
           console.log(this.cards.first); // cards.first gives displays first card in the list
           }
+       4. Last Card: console.log(this.cards.last);
+       5. Angular API Observable: console.log(this.cards.changes);
+          1. Define Method:
+             ngAfterViewInit() {this.cards.changes.subscribe((cards) => console.log(cards));}
+          2. Define EventEmit Handler and push the course and observe the change in cards
+             onCourseEdited() {
+             this.courses.push({
+             id: 21,
+             description: "Angular Core Deep Functionality",
+             iconUrl:
+             "https://s3-us-west-1.amazonaws.com/angular-university/course-images/angular-core-in-depth-small.png",
+             longDescription:
+             "A detailed walk-through of the most important part of Angular - the Core and Common modules",
+             category: "ADVANCED",
+             lessonsCount: 11,
+             });
+             }
+          3. Define Event Handler in App Template
+             <button (click)="onCourseEdited()">Edit Course</button>

@@ -52,8 +52,25 @@ export class AppComponent implements AfterViewInit {
 
   constructor() {}
   ngAfterViewInit() {
-    console.log(this.cards.first);
+    // changes.subscribe() method observes changes in the cards and display them
+    //
+    this.cards.changes.subscribe((cards) => console.log(cards));
   }
+  //  Click Event Handler for Edit Course to Push new Course
+  //  For changes.subscribe() Functionality
+  onCourseEdited() {
+    this.courses.push({
+      id: 21,
+      description: "Angular Core Deep Functionality",
+      iconUrl:
+        "https://s3-us-west-1.amazonaws.com/angular-university/course-images/angular-core-in-depth-small.png",
+      longDescription:
+        "A detailed walk-through of the most important part of Angular - the Core and Common modules",
+      category: "ADVANCED",
+      lessonsCount: 11,
+    });
+  }
+
   // Click Event Handler
   onCourseSelected(course: Course) {
     console.log("App Component - Click event Bubbled....", course);
