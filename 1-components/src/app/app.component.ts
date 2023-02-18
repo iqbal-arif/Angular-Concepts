@@ -50,11 +50,17 @@ export class AppComponent implements AfterViewInit {
   @ViewChildren(CourseCardComponent)
   cards: QueryList<CourseCardComponent>;
 
+  // Querying Multiple Card Reference for HTML Element Type
+  // Gives list of Native DOM Elements
+  @ViewChildren(CourseCardComponent, { read: ElementRef })
+  cardsRef: QueryList<ElementRef>;
+
   constructor() {}
   ngAfterViewInit() {
     // changes.subscribe() method observes changes in the cards and display them
     //
     this.cards.changes.subscribe((cards) => console.log(cards));
+    console.log(this.cardsRef);
   }
   //  Click Event Handler for Edit Course to Push new Course
   //  For changes.subscribe() Functionality

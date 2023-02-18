@@ -235,3 +235,7 @@
              }
           3. Define Event Handler in App Template
              <button (click)="onCourseEdited()">Edit Course</button>
+       6. Querying Component with Plain HTML Template Reference
+          1. For HTML Reference Instance:
+             @ViewChildren(CourseCardComponent, { read: ElementRef })
+             cardsRef: QueryList<ElementRef>;
