@@ -4,7 +4,9 @@
     <!--  cardIndex || "" Means if there is no card index then default is empty string-->
     {{ cardIndex || "" + " " + course.description }}
   </div>
-  <img
+  <!-- This image and ng-Template is used to display image in each card START -->
+  <!-- Activate it for the previous ngFor examples LESSON 21 -->
+  <!-- <img
     width="300"
     alt="Angular Logo"
     *ngIf="isImageVisible(); else noImage"
@@ -12,7 +14,10 @@
   />
   <ng-template #noImage>
     <p>No Image is Available</p>
-  </ng-template>
+  </ng-template> -->
+  <!-- This image and ng-Template is used to display image in each card END -->
+  <!-- ng-content assists in projecting the image component in the card-course template -->
+  <ng-content></ng-content>
 
   <div class="course-description">
     {{ course.description }}
