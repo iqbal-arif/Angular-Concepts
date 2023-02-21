@@ -28,11 +28,13 @@
 <!-- This code was defined to explain how component properties can be displayed -->
 <!-- <h1>{{ coreCourse.description }}</h1> -->
 <!--Container is given a Template Reference  -->
-<div class="courses" #container>
-  <!-- This code was define when title example was explained -->
-  <!-- <course-card [title]="coreCourse.description"></course-card> -->
-  <!-- This code was define when Course EventEmitter was performed -->
-  <!-- <course-card
+<!-- *****ACTIVATE THIS DIV FOR LESSONS UPTO NO. 21**** -->
+<!-- <div class="courses" #container> -->
+<!--**** ACTIVATE THIS DIV FOR LESSONS UPTO NO. 21**** -->
+<!-- This code was define when title example was explained -->
+<!-- <course-card [title]="coreCourse.description"></course-card> -->
+<!-- This code was define when Course EventEmitter was performed -->
+<!-- <course-card
     (courseSelected)="onCourseSelected($event)"
     [course]="coreCourse"
   ></course-card>
@@ -44,12 +46,12 @@
     (courseSelected)="onCourseSelected($event)"
     [course]="ngrxCourse"
   ></course-card> -->
-  <!-- The following code was to display all the cards through ngFor Loop -->
-  <!-- Importing All Course Through ngFor Loop through Array -->
-  <!-- With Slice pipe displaying only first & Second card -->
-  <!-- Add Class Attributes to card in Even and Odd order -->
-  <!-- Displayed all Cards through EventEmitter and added indexing on each card -->
-  <!-- <course-card
+<!-- The following code was to display all the cards through ngFor Loop -->
+<!-- Importing All Course Through ngFor Loop through Array -->
+<!-- With Slice pipe displaying only first & Second card -->
+<!-- Add Class Attributes to card in Even and Odd order -->
+<!-- Displayed all Cards through EventEmitter and added indexing on each card -->
+<!-- <course-card
     *ngFor="
       let course of courses | slice : 0 : 3;
       index as i;
@@ -66,17 +68,31 @@
     [course]="course"
     [cardIndex]="i + 1"
   ></course-card> -->
-  <!-- Displaying a Single Card (First Card at index 1) without ngFor Loop, without special indexing and class attributes -->
-  <course-card
-    #cardRef
-    (courseSelected)="onCourseSelected($event)"
-    [course]="courses[2]"
-  >
-  </course-card>
-  <course-card
-    *ngFor="let course of courses"
-    (courseSelected)="onCourseSelected($event)"
-    [course]="course"
-  >
+<!-- Displaying a Single Card (First Card at index 1) without ngFor Loop, without special indexing and class attributes -->
+<!-- <course-card
+  #cardRef
+  (courseSelected)="onCourseSelected($event)"
+  [course]="courses[2]"
+>
+</course-card> -->
+<!-- Displaying Multiple Multiple Cards -->
+<!-- <course-card
+  *ngFor="let course of courses"
+  (courseSelected)="onCourseSelected($event)"
+  [course]="course"
+>
+</course-card> -->
+<!-- Displaying Multiple Multiple Cards -->
+<!---->
+<!-- *****ACTIVATE THIS DIV FOR LESSONS UPTO NO. 21**** -->
+<!-- </div> -->
+<!-- *****ACTIVATE THIS DIV FOR LESSONS UPTO NO. 21**** -->
+
+<div class="courses" *ngIf="courses[0] as course">
+  <!-- course-card for ng-content example -->
+  <course-card (courseSelected)="onCourseSelected($event)" [course]="course">
+    <!-- Passing Image as an configurable component -->
+    <img width="300" alt="Angular Logo" [src]="courses.iconUrl" />
+    <h5>Total Lessons: 5</h5>
   </course-card>
 </div>

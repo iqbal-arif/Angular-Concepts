@@ -239,3 +239,5 @@
           1. For HTML Reference Instance:
              @ViewChildren(CourseCardComponent, { read: ElementRef })
              cardsRef: QueryList<ElementRef>;
+             /\***\*\*\*\*** Angular Content Projection with ng-content \***\*\*\*\*\***/
+19. ng-content: Configurable Component
