@@ -245,3 +245,7 @@
     2. <ng-content select="img"></ng-content>: Displays selected img element of component
     3. <ng-content select="h5"></ng-content>: Displays selected h5 element of component
     4. <ng-content select=".course"></ng-content>: Displays selected class of component
+    5. Multiple ng-content projections:
+       1. Configurable Text: Projected by ng_content by selected class
+       2. Configurable Long Description: Projected by another ng_content by selected class
+       3. Configurable Text Area: Projected by ng_content tag.

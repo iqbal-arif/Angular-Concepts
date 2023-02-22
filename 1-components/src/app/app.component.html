@@ -105,7 +105,13 @@
     />
     <h5>Total Lessons: 5</h5>
   </course-card>
-  <!-- L22: ng-content Projection Card 1 -->
+  <!-- L22: ng-content Projection Card 2 -->
+  <!-- 
+    1. image content by tag projection
+    2. image content by class projection
+    3. Description content by class projection
+    4. Any html tag projection by plain ng-content tag
+   -->
   <!--L22 course-card for ng-content example -->
   <course-card
     (courseSelected)="onCourseSelected($event)"
@@ -116,8 +122,18 @@
       <!-- L22 This image has been disabled to show ng-content projects out is given -->
       <!-- L22 Activate it to display it -->
       <img width="300" alt="Angular Logo" [src]="course[3].iconUrl" />
+
+      <!-- Configurable Text in App Template -->
       <h5>Total Lessons: 15</h5>
     </div>
+    <!-- Configurable Long Description in App Template -->
+    <div class="course-description">
+      {{ course[3].longDescription }}
+    </div>
+
+    <!-- Configurable Text Area in App Template -->
+    Edit Description:
+    <textarea placeholder="Enter Text"></textarea>
   </course-card>
 
   <!-- L22: FOR NG-CONTENT PROJECTION START -->
