@@ -117,7 +117,8 @@
     (courseSelected)="onCourseSelected($event)"
     [course]="courses[3]"
   >
-    <div class="course">
+    <!-- L23: Adding Template Reference #courseImage -->
+    <div class="course" #courseImage>
       <!--L22 Passing Image as an configurable component -->
       <!-- L22 This image has been disabled to show ng-content projects out is given -->
       <!-- L22 Activate it to display it -->

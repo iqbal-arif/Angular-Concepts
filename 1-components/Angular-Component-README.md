@@ -188,7 +188,10 @@
     14. Object Key Value Pipe: 1. Define Data Object at App level: course = COURSES[1]; 2. Define View at App level:
         <div \*ngFor="let pair of course | keyvalue">{{ pair.key + ":" + pair.value }}</div>
         /\***\*\*\*\*** Angular Template Querying View Child & View Children \***\*\*\*\*\***/
-17. A Decorators to perform Queries in Components Template.
+17. A Decorators to perform Queries in Components Template.(
+    a. Querying Template to get component instances
+    b. Querying by Template References
+    c. Querying Collection of Elements by Viewing Children.)
     1. Display Single Card by adjusting the code for a card in App Template
     2. Obtaining Child Reference in App Level Component.
        1. Use @ViewChild(CourseCardComponent)
@@ -249,3 +252,13 @@
        1. Configurable Text: Projected by ng_content by selected class
        2. Configurable Long Description: Projected by another ng_content by selected class
        3. Configurable Text Area: Projected by ng_content tag.
+          /\***\*\*\*\*** Angular Content Child Decorator \***\*\*\*\*\***/
+20. Content Child Decorator: for content projections
+    (
+    a. Querying Template to get component instances
+    b. Querying by Template References
+    c. Querying Collection of Elements by Viewing Children.)
+    1. Used only for component that have content projections.
+    2. To grab Reference to content in component class.
+    3. Restricted to projected ng-content only. Cannot query all the elements in cards component template. Even the parents elements cannot be queried in cards component.
+    4.

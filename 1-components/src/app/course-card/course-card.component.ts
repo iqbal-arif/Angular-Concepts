@@ -1,4 +1,12 @@
-import { Component, Input, EventEmitter, Output } from "@angular/core";
+import {
+  Component,
+  Input,
+  EventEmitter,
+  Output,
+  OnInit,
+  AfterViewInit,
+  ContentChild,
+} from "@angular/core";
 import { COURSES } from "src/db-data";
 import { Course } from "../model/course";
 
@@ -7,7 +15,8 @@ import { Course } from "../model/course";
   templateUrl: "./course-card.component.html",
   styleUrls: ["./course-card.component.css"],
 })
-export class CourseCardComponent {
+// L23: Adding AfterView life-cycle hoo
+export class CourseCardComponent implements OnInit, AfterViewInit {
   @Input()
   //Defines only the title property of the course object
   // title: string;
@@ -21,7 +30,21 @@ export class CourseCardComponent {
   @Output("courseSelected")
   courseEmitter = new EventEmitter<Course>();
 
+  /****L23 ***/
+  // Child Reference in Card Component
+  // A Template Query Mechanism:  Query Projected Content in Component
+  // @ContentChild('courseImage') Querying Component Template Reference
+  @ContentChild("courseImage")
+  image;
+
   constructor() {}
+  //L23: Method to display the value of the image Query.
+  ngAfterViewInit() {
+    // Gives a nativeElement , ie, native DOM element course-image
+    console.log(this.image);
+  }
+
+  ngOnInit(): void {}
   // Image Visibility Method
   isImageVisible() {
     //course property is defined & course iconUrl is visible
