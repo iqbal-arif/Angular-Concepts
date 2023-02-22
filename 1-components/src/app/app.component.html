@@ -87,12 +87,38 @@
 <!-- *****ACTIVATE THIS DIV FOR LESSONS UPTO NO. 21**** -->
 <!-- </div> -->
 <!-- *****ACTIVATE THIS DIV FOR LESSONS UPTO NO. 21**** -->
+<!-- L22: FOR NG-CONTENT PROJECTION START -->
+<div class="courses" *ngIf="courses as course">
+  <!-- L22: ng-content Projection Card 1 -->
+  <!--L22 course-card for ng-content example -->
+  <course-card
+    (courseSelected)="onCourseSelected($event)"
+    [course]="courses[2]"
+  >
+    <!--L22 Passing Image as an configurable component -->
 
-<div class="courses" *ngIf="courses[0] as course">
-  <!-- course-card for ng-content example -->
-  <course-card (courseSelected)="onCourseSelected($event)" [course]="course">
-    <!-- Passing Image as an configurable component -->
-    <img width="300" alt="Angular Logo" [src]="courses.iconUrl" />
+    <img
+      class="course"
+      width="300"
+      alt="Angular Logo"
+      [src]="courses[2].iconUrl"
+    />
     <h5>Total Lessons: 5</h5>
   </course-card>
+  <!-- L22: ng-content Projection Card 1 -->
+  <!--L22 course-card for ng-content example -->
+  <course-card
+    (courseSelected)="onCourseSelected($event)"
+    [course]="courses[3]"
+  >
+    <div class="course">
+      <!--L22 Passing Image as an configurable component -->
+      <!-- L22 This image has been disabled to show ng-content projects out is given -->
+      <!-- L22 Activate it to display it -->
+      <img width="300" alt="Angular Logo" [src]="course[3].iconUrl" />
+      <h5>Total Lessons: 15</h5>
+    </div>
+  </course-card>
+
+  <!-- L22: FOR NG-CONTENT PROJECTION START -->
 </div>

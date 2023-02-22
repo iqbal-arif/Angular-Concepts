@@ -16,8 +16,17 @@
     <p>No Image is Available</p>
   </ng-template> -->
   <!-- This image and ng-Template is used to display image in each card END -->
-  <!-- ng-content assists in projecting the image component in the card-course template -->
-  <ng-content></ng-content>
+  <!--L22: ng-content assists in projecting the image component in the card-course template -->
+  <!--L22: It can project multiple contents
+   -->
+  <!-- L22 Displays all configurable content present in App Template -->
+  <!-- <ng-content></ng-content> -->
+  <!-- L22 Displays only img part of the configurable content present in App Template -->
+  <!-- <ng-content select="img"></ng-content> -->
+  <!-- L22 Displays only h5 part of the configurable content present in App Template -->
+  <!-- <ng-content select="h5"></ng-content> -->
+  <!-- L22 Displays only class of the configurable content present in App Template -->
+  <ng-content select=".course"></ng-content>
 
   <div class="course-description">
     {{ course.description }}

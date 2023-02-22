@@ -240,4 +240,8 @@
              @ViewChildren(CourseCardComponent, { read: ElementRef })
              cardsRef: QueryList<ElementRef>;
              /\***\*\*\*\*** Angular Content Projection with ng-content \***\*\*\*\*\***/
-19. ng-content: Configurable Component
+19. ng-content: Configurable Component for partial component projections
+    1. <ng-content></ng-content> : Displays all configurable component content in App template.
+    2. <ng-content select="img"></ng-content>: Displays selected img element of component
+    3. <ng-content select="h5"></ng-content>: Displays selected h5 element of component
+    4. <ng-content select=".course"></ng-content>: Displays selected class of component
