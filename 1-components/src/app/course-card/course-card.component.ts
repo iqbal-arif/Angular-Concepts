@@ -5,8 +5,11 @@ import {
   Output,
   OnInit,
   AfterViewInit,
+  AfterContentInit,
   ContentChild,
   ElementRef,
+  ContentChildren,
+  QueryList,
 } from "@angular/core";
 import { COURSES } from "src/db-data";
 import { CourseImageComponent } from "../course-image/course-image.component";
@@ -18,7 +21,9 @@ import { Course } from "../model/course";
   styleUrls: ["./course-card.component.css"],
 })
 // L23: Adding AfterView life-cycle hoo
-export class CourseCardComponent implements OnInit, AfterViewInit {
+export class CourseCardComponent
+  implements OnInit, AfterViewInit, AfterContentInit
+{
   @Input()
   //Defines only the title property of the course object
   // title: string;
@@ -42,13 +47,23 @@ export class CourseCardComponent implements OnInit, AfterViewInit {
   // This is will give the instance of component
   image: CourseImageComponent;
 
+  /***L24 ***/
+  // Querying Multiple Image Reference for Deep querying
+  @ContentChildren(CourseImageComponent, { read: ElementRef })
+  images: QueryList<CourseImageComponent>;
+  // images;
+
   constructor() {}
   //L23: Method to display the value of the image Query.
   ngAfterViewInit() {
     // Gives a nativeElement , ie, native DOM element course-image
-    console.log(this.image);
+    // console.log(this.image);
   }
 
+  //L24: Method to display the value of the imageS Query.
+  ngAfterContentInit(): void {
+    console.log(this.images);
+  }
   ngOnInit(): void {}
   // Image Visibility Method
   isImageVisible() {

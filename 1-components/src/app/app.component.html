@@ -150,6 +150,11 @@
     <!-- This div section has been moved to course-image.component.html -->
     <course-image [src]="course[4].iconUrl"></course-image>
     <!-- IMAGE DIV ENDS -->
+    <!-- L24: ContentChildren : Querying Multiple Images STARTS-->
+    <course-image [src]="course[5].iconUrl"></course-image>
+    <course-image [src]="course[6].iconUrl"></course-image>
+    <!-- L24: ContentChildren : Querying Multiple Images ENDS-->
+
     <!-- Configurable Long Description in App Template -->
     <div class="course-description">
       {{ course[4].longDescription }}

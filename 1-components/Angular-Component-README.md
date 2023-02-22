@@ -253,7 +253,7 @@
        2. Configurable Long Description: Projected by another ng_content by selected class
        3. Configurable Text Area: Projected by ng_content tag.
           /\***\*\*\*\*** Angular Content Child Decorator \***\*\*\*\*\***/
-20. Content Child Decorator: for content projections
+20. Content Child Decorator: for Programmatic Reference for content projections
     (
     a. Querying Template to get component instances
     b. Querying by Template References
@@ -261,8 +261,11 @@
     1. Used only for component that have content projections.
     2. To grab Reference to content in component class.
     3. Restricted to projected ng-content only. Cannot query all the elements in cards component template. Even the parents elements cannot be queried in cards component.
-    4. ContentChild Querying:
+    4. ContentChild Querying: for Programmatic Reference
        1. Can query by Template References: @ContentChild('courseImage')
        2. Can query Component Instances Directly: @ContentChild(CourseImageComponent)
        3. Can query Component DOM Element: @ContentChild(CourseImageComponent, { read: ElementRef })
-    5. ContentChildren Querying:
+    5. ContentChildren Querying: for Programmatic Reference
+       1. Querying for Multiple Images: @ContentChildren(CourseImageComponent) in course-card
+       2. Use Content Life-cycle Hook for multiple ref.: AfterContentInit
+          Follow the steps used in ViewChild & ViewChildren
