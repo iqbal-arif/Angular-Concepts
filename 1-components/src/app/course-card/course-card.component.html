@@ -19,7 +19,8 @@
   <!--L22: ng-content assists in projecting the image component in the card-course template -->
   <!--L22: It can project multiple contents
    -->
-
+  <!-- L23 Displays configurable content present in App Template by card name -->
+  <ng-content select="course-image"></ng-content>
   <!-- L22 Displays only img part of the configurable content present in App Template -->
   <!-- <ng-content select="img"></ng-content> -->
   <!-- L22 Displays only h5 part of the configurable content present in App Template -->
@@ -30,6 +31,7 @@
   <ng-content select=".course-description"></ng-content>
   <!-- L22 Displays all configurable content present in App Template -->
   <ng-content></ng-content>
+
   <!-- L22 Component Description content-->
   <!-- De-active for L22 -->
   <!-- <div class="course-description">

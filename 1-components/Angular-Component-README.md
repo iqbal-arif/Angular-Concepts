@@ -261,4 +261,7 @@
     1. Used only for component that have content projections.
     2. To grab Reference to content in component class.
     3. Restricted to projected ng-content only. Cannot query all the elements in cards component template. Even the parents elements cannot be queried in cards component.
-    4.
+    4. ContentChild Querying:
+       1. Can query by Template References: @ContentChild('courseImage')
+       2. Can query Component Instances Directly: @ContentChild(CourseImageComponent)
+       3.

@@ -6,8 +6,10 @@ import {
   OnInit,
   AfterViewInit,
   ContentChild,
+  ElementRef,
 } from "@angular/core";
 import { COURSES } from "src/db-data";
+import { CourseImageComponent } from "../course-image/course-image.component";
 import { Course } from "../model/course";
 
 @Component({
@@ -34,8 +36,11 @@ export class CourseCardComponent implements OnInit, AfterViewInit {
   // Child Reference in Card Component
   // A Template Query Mechanism:  Query Projected Content in Component
   // @ContentChild('courseImage') Querying Component Template Reference
-  @ContentChild("courseImage")
-  image;
+  // @ContentChild(CourseImageComponent) Querying  by Component Class name.
+  // @ContentChild(CourseImageComponent, {read: ElementRef}) Querying Component Plain HTML Element Reference
+  @ContentChild(CourseImageComponent, { read: ElementRef })
+  // This is will give the instance of component
+  image: CourseImageComponent;
 
   constructor() {}
   //L23: Method to display the value of the image Query.

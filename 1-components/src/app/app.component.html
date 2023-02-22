@@ -136,6 +136,25 @@
     Edit Description:
     <textarea placeholder="Enter Text"></textarea>
   </course-card>
+  <!-- L22: FOR NG-CONTENT PROJECTION END -->
 
-  <!-- L22: FOR NG-CONTENT PROJECTION START -->
+  <!-- L23: FOR NG-CONTENT PROJECTION CHILD DECORATOR START -->
+
+  <!--L22 course-card for ng-content example -->
+  <course-card
+    (courseSelected)="onCourseSelected($event)"
+    [course]="courses[4]"
+  >
+    <!-- L23: Adding Template Reference #courseImage -->
+    <!-- IMAGE DIV STARTS -->
+    <!-- This div section has been moved to course-image.component.html -->
+    <course-image [src]="course[4].iconUrl"></course-image>
+    <!-- IMAGE DIV ENDS -->
+    <!-- Configurable Long Description in App Template -->
+    <div class="course-description">
+      {{ course[4].longDescription }}
+    </div>
+  </course-card>
+
+  <!-- L23: FOR NG-CONTENT PROJECTION CHILD DECORATOR END -->
 </div>
