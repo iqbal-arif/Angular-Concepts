@@ -264,4 +264,5 @@
     4. ContentChild Querying:
        1. Can query by Template References: @ContentChild('courseImage')
        2. Can query Component Instances Directly: @ContentChild(CourseImageComponent)
-       3.
+       3. Can query Component DOM Element: @ContentChild(CourseImageComponent, { read: ElementRef })
+    5. ContentChildren Querying:
