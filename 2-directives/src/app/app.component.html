@@ -11,9 +11,12 @@
   <!-- 
     1. Add highlighted to course-card when applying as selector
     2. L29: Replace highlighted with [highlighted]="true" when applying as Input property for Highlighted directives 
+    3. L30: Add toggleHighlight Event Listener
    -->
+
   <course-card
     highlighted
+    (toggleHighlight)="onToggle($event)"
     (courseSelected)="onCourseSelected($event)"
     [course]="course"
   >
