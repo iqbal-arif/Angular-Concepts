@@ -1,4 +1,4 @@
-import { Directive, HostBinding, Input } from "@angular/core";
+import { Directive, HostBinding, Input, HostListener } from "@angular/core";
 
 @Directive({
   selector: "[highlighted]", //Attribute Selector
@@ -6,7 +6,7 @@ import { Directive, HostBinding, Input } from "@angular/core";
 export class HighlightedDirective {
   // L29: Input Property Decorator
   @Input("highlighted")
-  isHighlighted = false;
+  isHighlighted = false; //Default value is set to false
 
   constructor() {
     console.log("Directive created...");
@@ -38,5 +38,18 @@ export class HighlightedDirective {
   @HostBinding("attr.disabled")
   get disabled() {
     return "true";
+  }
+
+  // L30: Applying Directives with HOST Listener
+  // L30 : To View DOM native Event add $event variable
+  @HostListener("mouseover", ["$event"])
+  mouseOver($event) {
+    //L30: To display cursor position
+    console.log($event);
+    this.isHighlighted = true;
+  }
+  @HostListener("mouseleave")
+  mouseLeave() {
+    this.isHighlighted = false;
   }
 }

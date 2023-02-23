@@ -10,10 +10,10 @@
   <!-- CARD 1 -->
   <!-- 
     1. Add highlighted to course-card when applying as selector
-    2. Replace highlighted with [highlighted]="true" when applying as Input property for Highlighted directives 
+    2. L29: Replace highlighted with [highlighted]="true" when applying as Input property for Highlighted directives 
    -->
   <course-card
-    [highlighted]="true"
+    highlighted
     (courseSelected)="onCourseSelected($event)"
     [course]="course"
   >

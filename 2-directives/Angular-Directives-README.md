@@ -28,12 +28,11 @@
         1. Select Element from the web.
         2. In Web Console type "$0" ; this gives the current element
         3. Applying className: $0.className = 'highlighted' and press enter
-    2.  Applying Directives on host through HostBing Decorator 1. Apply it in directives.ts: @HostBinding("class.highlighted") when highlighted selector is applied on HTML element:
-        <course-card
-        highlighted
-        (courseSelected)="onCourseSelected($event)"
-        [course]="course"
-        >
+    2.  Applying Directives on host through HostBing Decorator
+        1.  Apply it in directives.ts: @HostBinding("class.highlighted") when highlighted selector is applied on HTML element:
+            <course-card highlighted
+            (courseSelected)="onCourseSelected($event)"
+            [course]="course">
     3.  Apply Highlighted Directives as an Input value in HTML element
         1. Replace highlighted with [highlighted]="true" when applying as Input property for Highlighted directives.
         2. Add to highlighted.directive.ts
@@ -44,3 +43,12 @@
             get disabled() {
             return "true";
             }
+    5.  Apply Directives through HOST Listener
+        1.  Add @HostListener("mouseover")
+        2.  Add @HostListener("mouseleave")
+        3.  To Get native DOM Event, Add $event variable to HostListener
+            @HostListener("mouseover", ["$event"])
+            mouseOver($event) {
+            //L30: To display cursor position
+            console.log($event);
+    6.  Custom Event
