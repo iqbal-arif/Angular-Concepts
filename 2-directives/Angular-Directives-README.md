@@ -52,3 +52,6 @@
             //L30: To display cursor position
             console.log($event);
     6.  Custom Event
+        1.  Add @Output toggleHighlight trigger
+        2.  Emit Value ON & OFF with toggleHighlight trigger
+        3.  Add toggleHighlight event to App Template
