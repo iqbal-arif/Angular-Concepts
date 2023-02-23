@@ -20,3 +20,11 @@
    ng g directive directives/highlighted
 2. Attribute Selector: selector: "[highlighted]"
    Any Element that is highlighted attribute will be effected by it.
+
+/**\*\***\*\***\*\*_ Angular HOST Binding DOM Properties VS Attributes _\*\***\*\*\***\*\***/
+
+1. Directives are applied to Host Elements (highlighted styles are in assets/styles.css)
+   1. Applying Directives as className:
+      1. Select Element from the web.
+      2. In Web Console type "$0" ; this gives the current element
+      3. Applying className: $0.className = 'highlighted' and press enter
