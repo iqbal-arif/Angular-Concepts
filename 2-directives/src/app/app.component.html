@@ -8,8 +8,12 @@
 <div class="courses" *ngIf="courses[0] as course">
   <!-- L28: Applying Highlighted Attribute -->
   <!-- CARD 1 -->
+  <!-- 
+    1. Add highlighted to course-card when applying as selector
+    2. Replace highlighted with [highlighted]="true" when applying as Input property for Highlighted directives 
+   -->
   <course-card
-    highlighted
+    [highlighted]="true"
     (courseSelected)="onCourseSelected($event)"
     [course]="course"
   >

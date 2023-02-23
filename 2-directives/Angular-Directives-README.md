@@ -23,8 +23,24 @@
 
 /**\*\***\*\***\*\*_ Angular HOST Binding DOM Properties VS Attributes _\*\***\*\*\***\*\***/
 
-1. Directives are applied to Host Elements (highlighted styles are in assets/styles.css)
-   1. Applying Directives as className:
-      1. Select Element from the web.
-      2. In Web Console type "$0" ; this gives the current element
-      3. Applying className: $0.className = 'highlighted' and press enter
+1.  Directives are applied to Host Elements (highlighted styles are in assets/styles.css)
+    1.  Applying Directives as className:
+        1. Select Element from the web.
+        2. In Web Console type "$0" ; this gives the current element
+        3. Applying className: $0.className = 'highlighted' and press enter
+    2.  Applying Directives on host through HostBing Decorator 1. Apply it in directives.ts: @HostBinding("class.highlighted") when highlighted selector is applied on HTML element:
+        <course-card
+        highlighted
+        (courseSelected)="onCourseSelected($event)"
+        [course]="course"
+        >
+    3.  Apply Highlighted Directives as an Input value in HTML element
+        1. Replace highlighted with [highlighted]="true" when applying as Input property for Highlighted directives.
+        2. Add to highlighted.directive.ts
+           @Input("highlighted")
+           isHighlighted = false;
+    4.  Apply HTML Attributes to components
+        1.  @HostBinding("attr.disabled")
+            get disabled() {
+            return "true";
+            }
