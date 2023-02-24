@@ -9,11 +9,12 @@ import {
 
 @Directive({
   selector: "[highlighted]", //Attribute Selector
+  exportAs: "hl", //L31: Reference for Toggle Method to be triggered at App level
 })
 export class HighlightedDirective {
   // L29: Input Property Decorator
   @Input("highlighted")
-  isHighlighted = "false"; //Default value is set to false
+  isHighlighted = false; //Default value is set to false
 
   // L30: ToggleHighlight: Trigger when highlight is ON (mouseover) & OFF (mouseleave)
   @Output()
@@ -48,7 +49,7 @@ export class HighlightedDirective {
   // L29:  Applying HTML Attributes To components
   @HostBinding("attr.disabled")
   get disabled() {
-    return "true";
+    return true;
   }
 
   // L30: Applying Directives with HOST Listener
@@ -57,14 +58,21 @@ export class HighlightedDirective {
   mouseOver($event) {
     //L30: To display cursor position
     console.log($event);
-    this.isHighlighted = "true";
+    this.isHighlighted = true;
     // L30: Emitting the toggle value ON
     this.toggleHighlight.emit(this.isHighlighted);
   }
   @HostListener("mouseleave")
   mouseLeave() {
-    this.isHighlighted = "false";
+    this.isHighlighted = false;
     // L30: Emitting the toggle value OFF
+    this.toggleHighlight.emit(this.isHighlighted);
+  }
+
+  // L31: Third party API, such as, A Toggle Method is give
+  // This method can be called by App Template OR App Component
+  toggle() {
+    this.isHighlighted = !this.isHighlighted;
     this.toggleHighlight.emit(this.isHighlighted);
   }
 }
