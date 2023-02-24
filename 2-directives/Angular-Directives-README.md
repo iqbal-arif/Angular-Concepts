@@ -73,3 +73,8 @@
                   // L31: Logging HighLighted value after triggering it
                   console.log(this.highlighted);
                   }
+    8.  Angular Structural Directives - Custom Structural Directives
+        Used to ADD or Remove Element from the page. Has \* in the beginning
+        1. Generate Custom Structural Directive
+           ng generate directive directives/ngx-unless
+           Note:ngx means extended directive not part of angular code but extra one.
