@@ -60,10 +60,16 @@
             1. App Template Level
             2. App Component Level
                A third party API is available in highlighted directive
-               A. App Template Level Access
+               /**\***A. App Template Level Access**\***/
                1. A toggle() method that emits isHighlighted value in App Template & Component Level on trigger.
                2. Define exportAs: "hl" Reference in highlighted.directives
                3. Define #highlighter ='hl' Template reference in App Template as #highlighter
                4. Define Double Click Event in App Template as such
                   (dblclick)="highlighter.toggle()"
-                  B. App Component Level Access
+                  /**\*\***B. App Component Level Access**\***/
+               5. Define @ViewChild(HighlightedDirective) directly or
+               6. Define @ViewChild(CourseCardComponent, { read: HighlightedDirective }) through card component
+               7. Vie log in ngAfterViewInit() {
+                  // L31: Logging HighLighted value after triggering it
+                  console.log(this.highlighted);
+                  }
