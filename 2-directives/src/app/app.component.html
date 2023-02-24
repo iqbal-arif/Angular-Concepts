@@ -13,7 +13,7 @@
     2. L29: Replace highlighted with [highlighted]="true" when applying as Input property for Highlighted directives 
     3. L30: Add toggleHighlight Event Listener
     4. L31: #highlighter Reference for Highlighted Toggle Method
-    5. L33: *ngxUnless="!course.iconUrl condition to display the image.
+    5. L33: *ngxUnless="!course.iconUrl condition to display the image
    -->
 
   <course-card
@@ -23,7 +23,10 @@
     (courseSelected)="onCourseSelected($event)"
     [course]="course"
   >
-    <course-image [src]="course.iconUrl" *ngxUnless="!course.iconUrl></course-image>
+    <course-image
+      [src]="course.iconUrl"
+      *ngxUnless="!course.iconUrl"
+    ></course-image>
 
     <div class="course-description" (dblclick)="highlighter.toggle()">
       {{ course.longDescription }}
