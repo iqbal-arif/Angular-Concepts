@@ -78,3 +78,7 @@
         1. Generate Custom Structural Directive
            ng generate directive directives/ngx-unless
            Note:ngx means extended directive not part of angular code but extra one.
+        2. Define Programmatic Reference to Template in custom directive
+           constructor(private templateRef: TemplateRef<any>) { }
+        3. Instantiating the View by ViewContainerRef
+        4. Receive ngxUnless property by setter Method to Implement the Condition for view
