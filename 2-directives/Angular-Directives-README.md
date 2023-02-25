@@ -83,3 +83,10 @@
         3. Instantiating the View by ViewContainerRef
         4. Receive ngxUnless property by setter Method to Implement the Condition for view
         5. Define Reference for ngxUnless in ngxUnless directive.
+
+/**\*\***\*\***\*\*_ Angular View Encapsulation _\*\***\*\*\***\*\***/
+
+1. Angular Host Selector :host
+   1. To Target Host HTML Element of the Component itself
+   2. Host styles are applied as nghost-c1, nghost-c2...c13, etc
+   3. All the component's host or content related styles should be moved to card-component.css
