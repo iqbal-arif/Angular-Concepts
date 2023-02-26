@@ -41,7 +41,12 @@
   font-weight: bold;
 }
 
-.course-card .course-description {
+/* L:36 Angular View Encapsulation consider this an App style and not component */
+/* And that is why properties are not applied properly even though it has .course-card prefix
+To Avoid this situation use ng-deep modifier */
+/* App style attaches ng-content-xtp-c16 attribute
+   Component style attaches ng-content-clw-c12 attribute which is different then App attribute */
+.course-card ::ng-deep .course-description {
   max-width: 360px;
   margin: 0 auto;
   margin-top: 15px;
