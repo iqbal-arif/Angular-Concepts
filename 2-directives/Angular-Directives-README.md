@@ -90,3 +90,11 @@
    1. To Target Host HTML Element of the Component itself
    2. Host styles are applied as nghost-c1, nghost-c2...c13, etc
    3. All the component's host or content related styles should be moved to card-component.css
+2. Angular ng-deep modifier (::ng-deep)
+   1. .course-card .course-description:
+      Angular View Encapsulation consider this an App style and not component
+   2. And that is why properties are not applied properly despite .course-card as prefix
+   3. To Avoid this situation use ng-deep modifier
+      .course-card ::ng-deep .course-description
+      App style attaches ng-content-xtp-c16 attribute
+      Component style attaches ng-content-clw-c12 attribute which is different then App attribute
