@@ -98,3 +98,6 @@
       .course-card ::ng-deep .course-description
       App style attaches ng-content-xtp-c16 attribute
       Component style attaches ng-content-clw-c12 attribute which is different then App attribute
+   4. Part after ng-deep is not going to be specific to particular component.
+   5. Part before ng-deep is going to be specific to particular component with attached ng-content-c2 attribute.
+   6. ng-deep is used to style elements that are received in component via content projection.
