@@ -22,7 +22,7 @@ import { CourseImageComponent } from "../course-image/course-image.component";
   selector: "course-card",
   templateUrl: "./course-card.component.html",
   styleUrls: ["./course-card.component.css"],
-  // L38: Types of View Encapsulation This is default view applied
+  // L38: Types of View Encapsulation This is default view applied; Angular Recommended
   encapsulation: ViewEncapsulation.Emulated,
 })
 export class CourseCardComponent
