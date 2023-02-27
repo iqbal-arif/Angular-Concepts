@@ -118,3 +118,6 @@
    If not supplied, the value is taken from the CompilerOptions which defaults to ViewEncapsulation.Emulated.
 
    If the policy is ViewEncapsulation.Emulated and the component has no Component#styles styles nor Component#styleUrls styleUrls, the policy is automatically switched to ViewEncapsulation.None.
+
+/**\*\***\*\***\*\*_ Angular Injectable Services _\*\***\*\*\***\*\***/
+Whereby Angular contacts Database and display data interactively via View Template
