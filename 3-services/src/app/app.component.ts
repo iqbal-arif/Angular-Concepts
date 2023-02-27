@@ -14,6 +14,7 @@ import { HighlightedDirective } from "./directives/highlighted.directive";
 import { Observable } from "rxjs";
 // import{import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from "@angular/common/http";
+import { CoursesService } from "./services/courses.service";
 
 // @Injectable({providedIn: 'root'})
 export class ServiceNameService {
@@ -37,12 +38,18 @@ export class AppComponent implements OnInit {
   /***ACTIVATE FOR LESSON 40 ****/
 
   // L40: Define private service to utilize HTTP Client Services
-  constructor(private http: HttpClient) {}
+  // L42: Define coursesService:CoursesService with type annotation to inject an instance of course
+  constructor(
+    private http: HttpClient,
+    private coursesService: CoursesService
+  ) {}
 
   //L40: ngOnInit: Another Life-cycle Hook
   // L40:Use in initialization logic, such as, triggering Backend Call to fetch Data for component
   // L40:This ngOnInit method is called by Angular Framework
   ngOnInit() {
+    // L42: Logging the value of courseService
+    console.log(this.coursesService);
     // L40: Adding parameters to Http get request via Angular HttpParams utility
     // THE PARAMS PART IS NOT WORKING .CHECK IT OUT
     const params = new HttpParams().set("page", "1").set("pageSize", "10");
