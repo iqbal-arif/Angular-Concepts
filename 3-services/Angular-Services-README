@@ -26,3 +26,10 @@ This will allow to query Backend and display query on the screen using angular H
 
 
 #************* Angular Async Pipe *************#
+1. Async Pipe allows implicitly subscribe to observable from the template
+2. Without Async the observable are derived manually and are mutable
+3. Define Observable annotation: courses$: Observable<Course[]>;
+4. Fetch the Params Values: this.courses$ = this.http.get<Course[]>("/api/courses", { params });
+5. Reference to App View Template:
+   <course-card *ngFor="let course of courses$ | async" [course]="course">
+   1. Once course value arrives from API it will be displayed to Template view ngcontent utility

@@ -27,9 +27,15 @@ export class ServiceNameService {
   styleUrls: ["./app.component.css"],
 })
 export class AppComponent implements OnInit {
+  // L41: Implicit Observable by Angular Async Pipe
+  // L41: Values emitted are going to be array of Courses
+  courses$: Observable<Course[]>;
+  /***ACTIVATE FOR LESSON 40 ****/
   // L40: This course is utilizing local db-data through COURSES model
   // L40:courses = COURSES;
-  courses; // This one is from API
+  /*courses; */ // This one is from API
+  /***ACTIVATE FOR LESSON 40 ****/
+
   // L40: Define private service to utilize HTTP Client Services
   constructor(private http: HttpClient) {}
 
@@ -42,10 +48,13 @@ export class AppComponent implements OnInit {
     const params = new HttpParams().set("page", "1").set("pageSize", "10");
 
     // L40: http.get gives unobservable. To display the content use .subscribe() method
-    this.http
-      .get("/api/courses", { params }) //L40: Adding request parameters from params constant
-      // L40: This code is used to test the API connection and display it in console as array
-      // L40:.subscribe((arg) => console.log(arg ));
-      .subscribe((courses) => (this.courses = courses));
+    this.http.get("/api/courses", { params }); //L40: Adding request parameters from params constant
+    // L41: Using Observable
+    this.courses$ = this.http.get<Course[]>("/api/courses", { params });
+    /***ACTIVATE FOR LESSON 40 ****/
+    // L40: This code is used to test the API connection and display it in console as array
+    // L40:.subscribe((arg) => console.log(arg ));
+    // .subscribe((courses) => (this.courses = courses));
+    /***ACTIVATE FOR LESSON 40 ****/
   }
 }
