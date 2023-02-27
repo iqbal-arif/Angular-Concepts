@@ -33,3 +33,8 @@ This will allow to query Backend and display query on the screen using angular H
 5. Reference to App View Template:
    <course-card *ngFor="let course of courses$ | async" [course]="course">
    1. Once course value arrives from API it will be displayed to Template view ngcontent utility
+
+
+#************* Custom Angular Services *************#
+1. Generate service template
+ng generate service services/courses
