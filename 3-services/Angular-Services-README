@@ -13,3 +13,16 @@
 This will allow to query Backend and display query on the screen using angular HTTP service
 
 #************* Angular HTTP Client Services *************#
+1. Connecting Database Through HTTP Client Services constructor(private http: HttpClient) {}
+2. Using ngOnInit Life-cycle Hooks to Initialize logic, such as, triggering Backend Call to fetch Data for component
+3. This ngOnInit method is called by Angular Framework
+4. Adding parameters to Http get request via Angular HttpParams utility
+   const params = new HttpParams().set("page", "1").set("pageSize", "10");
+5. Adding parameters to Http get request via Angular HttpParams utility
+    const params = new HttpParams().set("page", "1").set("pageSize", "10");
+6. http.get gives unobservable. To display the content use .subscribe() method
+7. Adding request parameters from params constant
+    this.http.get("/api/courses", { params }) 
+
+
+#************* Angular Async Pipe *************#

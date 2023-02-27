@@ -43,9 +43,9 @@ export class AppComponent implements OnInit {
 
     // L40: http.get gives unobservable. To display the content use .subscribe() method
     this.http
-      .get("/api/courses" /*{ params }*/) //L40: Adding request parameters from params constant
+      .get("/api/courses", { params }) //L40: Adding request parameters from params constant
       // L40: This code is used to test the API connection and display it in console as array
       // L40:.subscribe((arg) => console.log(arg ));
-      .subscribe((courses) => (this.courses = this.courses));
+      .subscribe((courses) => (this.courses = courses));
   }
 }
