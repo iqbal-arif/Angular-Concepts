@@ -6,12 +6,21 @@
 </div>
 
 <div>
-  <div class="courses">
+  <!-- L41: OPTION 2: Active: Observable Async Pipe -->
+  <div class="courses" *ngIf="courses$ | async as courses">
+    <!-- L41: OPTION 2: Active: Observable Async Pipe -->
+    <!-- Original code -->
+    <!-- <div class="courses"> -->
+    <!-- Original code -->
     <!-- Activate for courses without Async Pipe -->
     <!-- <course-card *ngFor="let course of courses" -->
     <!-- Activate for courses without Async Pipe -->
-    <!-- L41: Observable Async Pipe -->
-    <course-card *ngFor="let course of courses$ | async" [course]="course">
+    <!-- L41: OPTION 1: Activate to see in action : Observable Async Pipe -->
+    <!-- <course-card *ngFor="let course of courses$ | async" [course]="course"> -->
+    <!-- L41: OPTION 1: Activate to see in action : Observable Async Pipe -->
+    <!-- L41: OPTION 2: Active: Observable Async Pipe -->
+    <course-card *ngFor="let course of courses" [course]="course">
+      <!-- L41: OPTION 2: Active: Observable Async Pipe -->
       <course-image [src]="course.iconUrl"></course-image>
     </course-card>
   </div>
