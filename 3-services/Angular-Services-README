@@ -1,0 +1,14 @@
+/**\*\***\*\***\*\*** Angular Services Setup **\*\***\*\*\***\*\***/
+
+1. git link
+   https://github.com/angular-university/angular-course/tree/3-services
+
+2. git checkout -b 2-services origin/2-directives.
+
+3. npm update
+
+4. npm start
+
+5. For Backup API Server: in second Terminal start : npm run server
+
+/**\*\***\*\***\*\*** Angular Directives Types **\*\***\*\*\***\*\***/
