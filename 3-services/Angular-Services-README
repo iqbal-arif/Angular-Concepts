@@ -36,5 +36,24 @@ This will allow to query Backend and display query on the screen using angular H
 
 
 #************* Custom Angular Services *************#
-1. Generate service template
+1. Generate service template with Injectable Class that can inject services just like Angular built-in injectable service.
 ng generate service services/courses
+2. Injectable Service: Compatible with Angular Dependency Injection System.
+   @Injectable({providedIn: 'root'})
+   1. Means it can create only one an instance of the service available for the whole App at the root of the dependency injector.
+3. Class AppComponent does not create its own HTTP Client dependencies. It is provided via constructor function  of the Class AppComponent.
+   Class does not know
+   1. Where does it exists , how is it implemented, and
+   2. Is it a test implementation or is it a real HTTP Client.
+   3. But it knows that dependencies are injected via constructor called dependency injection.
+4. Injecting class CoursesService to App  (APPLICATION SINGLETON Means only one INSTANCE.)
+   1. Define coursesService:CoursesService with type annotation to inject an instance of course in App
+      constructor(
+      private http: HttpClient,
+      private coursesService: CoursesService ) {} 
+   2. Injecting coursesService Instance at Component Level
+      constructor(private coursesService: CoursesService) {}
+   3. Logging coursesService Instance at Component Level
+      ngOnInit() {console.log("coursesService course card", this.coursesService);}
+   4. Logging to verify that it is the only one instance available in all cards
+      constructor() { console.log("creating CoursesServices");}
