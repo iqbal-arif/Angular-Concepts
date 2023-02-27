@@ -23,6 +23,11 @@
   background: lightcyan;
 }
 
+/* L37: host-context */
+:host-context(.salmon-theme) .course-card {
+  background: lightsalmon;
+}
+
 .course-card.beginner {
   background: lightsalmon;
 }
