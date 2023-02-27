@@ -57,3 +57,16 @@ ng generate service services/courses
       ngOnInit() {console.log("coursesService course card", this.coursesService);}
    4. Logging to verify that it is the only one instance available in all cards
       constructor() { console.log("creating CoursesServices");}
+5. Angular Custom Service Fetching Data. Common Shared Service Logical Approach
+   1. To use HTTP Fetch Service in Several Components of the application other than Application itself
+   2. Move all HTTP logic to one central courses.service allowing to call multiple parts of App
+      export class CoursesService {
+      Define private service to utilize HTTP Client Services
+      constructor(private http: HttpClient) {} 
+   3. Data is returned via Observable loadCourses()
+      loadCourses(): Observable<Course[]> {
+      const params = new HttpParams().set("page", "1").set("pageSize", "10");
+      this.http.get("/api/courses", { params });
+      return this.http.get<Course[]>("/api/courses", { params }); } 
+   4. When Data is available it emits and receive it by App's observable 
+      courses$: Observable<Course[]>
