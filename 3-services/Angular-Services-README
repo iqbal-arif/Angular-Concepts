@@ -1,4 +1,4 @@
-/**\*\***\*\***\*\*** Angular Services Setup **\*\***\*\*\***\*\***/
+#************* Angular Services Setup *************#
 
 1. git link
    https://github.com/angular-university/angular-course/tree/3-services
@@ -10,5 +10,6 @@
 4. npm start
 
 5. For Backup API Server: in second Terminal start : npm run server
+This will allow to query Backend and display query on the screen using angular HTTP service
 
-/**\*\***\*\***\*\*** Angular Directives Types **\*\***\*\*\***\*\***/
+#************* Angular HTTP Client Services *************#
