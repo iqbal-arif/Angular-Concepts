@@ -19,7 +19,12 @@
     <!-- <course-card *ngFor="let course of courses$ | async" [course]="course"> -->
     <!-- L41: OPTION 1: Activate to see in action : Observable Async Pipe -->
     <!-- L41: OPTION 2: Active: Observable Async Pipe -->
-    <course-card *ngFor="let course of courses" [course]="course">
+    <!-- L44: Subscribe to Course -->
+    <course-card
+      *ngFor="let course of courses"
+      (courseChanged)="save($event)"
+      [course]="course"
+    >
       <!-- L41: OPTION 2: Active: Observable Async Pipe -->
       <course-image [src]="course.iconUrl"></course-image>
     </course-card>

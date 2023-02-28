@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { HttpClient, HttpParams } from "@angular/common/http";
+import { HttpClient, HttpParams, HttpHeaders } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { Course } from "../model/course";
 
@@ -20,5 +20,12 @@ export class CoursesService {
 
     this.http.get("/api/courses", { params });
     return this.http.get<Course[]>("/api/courses", { params });
+  }
+
+  //L44: API Service Data Modification PUT
+  saveCourse(course: Course) {
+    // L44: Adding HTTP Header
+    const headers = new HttpHeaders().set("X-Auth", "userId");
+    return this.http.put(`/api/courses/${course.id}`, course, { headers });
   }
 }

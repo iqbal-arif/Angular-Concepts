@@ -71,4 +71,10 @@ export class AppComponent implements OnInit {
     // L43:
     this.courses$ = this.coursesService.loadCourses();
   }
+  // L44: Save the modification coming through changed event
+  save(course: Course) {
+    this.coursesService
+      .saveCourse(course)
+      .subscribe(() => console.log("Course Saved!"));
+  }
 }

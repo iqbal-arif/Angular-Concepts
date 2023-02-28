@@ -70,3 +70,14 @@ ng generate service services/courses
       return this.http.get<Course[]>("/api/courses", { params }); } 
    4. When Data is available it emits and receive it by App's observable 
       courses$: Observable<Course[]>
+6. Angular Custom Services :  Data Modification Method PUT
+   1. Define API service:
+      saveCourse(course:Course){  }
+   2. Call API from App Component : @Output("courseChanged")
+   3. Detect course change event that will emit the course 
+      onSaveClicked(description: string) {this.courseEmitter.emit({ ...this.course, description });}
+   4. Subscribe to course: <course-card *ngFor="let course of courses" (courseChanged="save($event)") [course]="course">
+   5. Save the modification coming through changed event
+      save(course:Course){}
+   6. Add Custom HTTP header to Request for server to verify if operation is allowed or not
+   
