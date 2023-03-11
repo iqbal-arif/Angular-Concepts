@@ -1,4 +1,4 @@
-#************* Angular Services Setup *************#
+#**\*\***\***\*\*** Angular Services Setup **\*\***\***\*\***#
 
 1. git link
    https://github.com/angular-university/angular-course/tree/3-services
@@ -10,47 +10,48 @@
 4. npm start
 
 5. For Backup API Server: in second Terminal start : npm run server
-This will allow to query Backend and display query on the screen using angular HTTP service
+   This will allow to query Backend and display query on the screen using angular HTTP service
 
-#************* Angular HTTP Client Services *************#
+#**\*\***\***\*\*** Angular HTTP Client Services **\*\***\***\*\***#
+
 1. Connecting Database Through HTTP Client Services constructor(private http: HttpClient) {}
 2. Using ngOnInit Life-cycle Hooks to Initialize logic, such as, triggering Backend Call to fetch Data for component
 3. This ngOnInit method is called by Angular Framework
 4. Adding parameters to Http get request via Angular HttpParams utility
    const params = new HttpParams().set("page", "1").set("pageSize", "10");
 5. Adding parameters to Http get request via Angular HttpParams utility
-    const params = new HttpParams().set("page", "1").set("pageSize", "10");
+   const params = new HttpParams().set("page", "1").set("pageSize", "10");
 6. http.get gives unobservable. To display the content use .subscribe() method
 7. Adding request parameters from params constant
-    this.http.get("/api/courses", { params }) 
+   this.http.get("/api/courses", { params })
 
+#**\*\***\***\*\*** Angular Async Pipe **\*\***\***\*\***#
 
-#************* Angular Async Pipe *************#
 1. Async Pipe allows implicitly subscribe to observable from the template
 2. Without Async the observable are derived manually and are mutable
 3. Define Observable annotation: courses$: Observable<Course[]>;
 4. Fetch the Params Values: this.courses$ = this.http.get<Course[]>("/api/courses", { params });
 5. Reference to App View Template:
-   <course-card *ngFor="let course of courses$ | async" [course]="course">
+   <course-card \*ngFor="let course of courses$ | async" [course]="course">
    1. Once course value arrives from API it will be displayed to Template view ngcontent utility
 
+#**\*\***\***\*\*** Custom Angular Services **\*\***\***\*\***#
 
-#************* Custom Angular Services *************#
 1. Generate service template with Injectable Class that can inject services just like Angular built-in injectable service.
-ng generate service services/courses
+   ng generate service services/courses
 2. Injectable Service: Compatible with Angular Dependency Injection System.
    @Injectable({providedIn: 'root'})
    1. Means it can create only one an instance of the service available for the whole App at the root of the dependency injector.
-3. Class AppComponent does not create its own HTTP Client dependencies. It is provided via constructor function  of the Class AppComponent.
+3. Class AppComponent does not create its own HTTP Client dependencies. It is provided via constructor function of the Class AppComponent.
    Class does not know
    1. Where does it exists , how is it implemented, and
    2. Is it a test implementation or is it a real HTTP Client.
    3. But it knows that dependencies are injected via constructor called dependency injection.
-4. Injecting class CoursesService to App  (APPLICATION SINGLETON Means only one INSTANCE.)
+4. Injecting class CoursesService to App (APPLICATION SINGLETON Means only one INSTANCE.)
    1. Define coursesService:CoursesService with type annotation to inject an instance of course in App
       constructor(
       private http: HttpClient,
-      private coursesService: CoursesService ) {} 
+      private coursesService: CoursesService ) {}
    2. Injecting coursesService Instance at Component Level
       constructor(private coursesService: CoursesService) {}
    3. Logging coursesService Instance at Component Level
@@ -62,22 +63,36 @@ ng generate service services/courses
    2. Move all HTTP logic to one central courses.service allowing to call multiple parts of App
       export class CoursesService {
       Define private service to utilize HTTP Client Services
-      constructor(private http: HttpClient) {} 
+      constructor(private http: HttpClient) {}
    3. Data is returned via Observable loadCourses()
       loadCourses(): Observable<Course[]> {
       const params = new HttpParams().set("page", "1").set("pageSize", "10");
       this.http.get("/api/courses", { params });
-      return this.http.get<Course[]>("/api/courses", { params }); } 
-   4. When Data is available it emits and receive it by App's observable 
+      return this.http.get<Course[]>("/api/courses", { params }); }
+   4. When Data is available it emits and receive it by App's observable
       courses$: Observable<Course[]>
-6. Angular Custom Services :  Data Modification Method PUT
+6. Angular Custom Services : Data Modification Method PUT
    1. Define API service:
-      saveCourse(course:Course){  }
+      saveCourse(course:Course){ }
    2. Call API from App Component : @Output("courseChanged")
-   3. Detect course change event that will emit the course 
+   3. Detect course change event that will emit the course
       onSaveClicked(description: string) {this.courseEmitter.emit({ ...this.course, description });}
-   4. Subscribe to course: <course-card *ngFor="let course of courses" (courseChanged="save($event)") [course]="course">
+   4. Subscribe to course: <course-card \*ngFor="let course of courses" (courseChanged="save($event)") [course]="course">
    5. Save the modification coming through changed event
       save(course:Course){}
    6. Add Custom HTTP header to Request for server to verify if operation is allowed or not
-   
+
+#**\*\***\***\*\*** Angular Dependencies System **\*\***\***\*\***#
+
+1. AppComponent has Defined Injection Dependencies of coursesService:CoursesService with type annotation to inject an instance of course via class constructor function
+   constructor( private coursesService: CoursesService)
+2. Each card component can have its own dependencies
+   such as, in course.service.ts we have
+   constructor(private http: HttpClient) {}
+3. The provider helps in generating the instances of the class course
+
+   @Injectable({
+   providedIn: "root",
+   })
+
+4. Creating Angular Dependencies Provider to inject CoursesService dependencies
