@@ -149,3 +149,22 @@
 
    1. Via Input Properties of the component, or
    2. Via Observable streams through ASYNC PIPE.
+
+#**\*\***\***\*\*** Angular Attribute Decorator **\*\***\***\*\***#
+Defining variable as a Type Attribute makes that property not intended to be changed over time. To avoid number of input expressions of templates in App evaluated by Angular
+
+#**\*\***\***\*\*** Angular Custom Change Detection **\*\***\***\*\***#
+
+1.  Default Detection: base itself on the values of the expressions in the template. Compares the current value with previous value to check for change. If so then component gets marked for rendering.
+
+2.  OnPush Detection: Pushing data explicitly to the template, via
+    a. input properties, or
+    b. async pipe into to the component.
+    The component then know whether it needs to check if some new data is available and decide if the view should be rendered.
+
+    Both cases when event occurs, it can implicitly modify data and check if the component needs rendering or not.
+
+    UseCase: use Custom ChangeDetectorRef as a last resort
+
+    1.  Receiving continuous data from backend through API,
+        a. use Angular ChangeDetectorRef
