@@ -97,9 +97,14 @@
    2. Building UI with a lot of nested components and dependency services caters it.
 4. The course service is not instantiating by class but injected by Angular.
    The provider helps in generating the instances of the class course
-
+   It creates the dependency on behalf of the Angular Dependency injection system.
+   a. Provider give angular dependency injection a factory function to create dependency
+   b. Angular dependency system call factory function to generate dependency
+   c. Passes as services on to various components of App via constructor function
+   The provider is also know as Tree-shakeable provider
    @Injectable({
    providedIn: "root",
    })
 
-5. Creating Angular Dependencies Provider to inject CoursesService dependencies
+5. Creating Angular Dependencies Provider Manually to inject CoursesService dependencies
+   NOte: This is just to understand how provider works under the hood, but normally it is not required to create your own.
