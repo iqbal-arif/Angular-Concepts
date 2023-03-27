@@ -136,3 +136,16 @@
    e. For @Input() data; JS objects are being compared that gets passed by object reference. As long @Input() data is get mutated by any other components, such as, parent component. So use immutable Objects TO Avoid this situation.
 
    f. OnPush Detection does not hold memory slot in PC. Apparently faster but tricker.
+
+2. When Working with Observable data streams with OnPush, then use ASYNC PIPE as much as possible to make OnPush easier to implement.
+   a. Because Async Pipe will handle registering from any observable when component gets destroyed.
+
+3. If APP is running some PERFORMANCE ISSUE then consider OnPush Detection for changes.
+   RECOMMENDATIONS:
+   A. When working with observable data streams, use the async pipe
+   B. Avoid data mutation directly at the level of view. So make data objects immutable either by freezing them before passing them to view. Make all the existing Property READ ONLY. Or use alternate library, such as, IMOD or G.S.
+
+   NOTE: With OnPush Detection , there are two ways to Push Data to component to trigger the component rendering.
+
+   1. Via Input Properties of the component, or
+   2. Via Observable streams through ASYNC PIPE.
