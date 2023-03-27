@@ -108,3 +108,31 @@
 
 5. Creating Angular Dependencies Provider Manually to inject CoursesService dependencies
    NOte: This is just to understand how provider works under the hood, but normally it is not required to create your own.
+   -
+   -
+   - Go Back and check the videos
+   -
+   -
+   -
+
+#**\*\***\***\*\*** Angular Default Change Detection **\*\***\***\*\***#
+
+1. Angular scans through each component tree check for [value] inputs changes after every event listed in the template, such as, click event or keyup event.
+2. If expressions have changed it is going to update the view.
+
+#**\*\***\***\*\*** Angular OnPush Change Detection **\*\***\***\*\***#
+
+1. If component is using an OnPush detection, then
+   a. Angular will not try to detect changes on the @Input() data by analyzing each of the expressions of the template.
+
+   b. Instead, Angular is going to try to detect changes in the @Input() over the component.
+
+   c. In Default Detection , Angular checks all the expressions fo all the templates in the component hierarchy when any event occurs.
+
+   d. With OnPush Detection, when @Input() data of any given branch of the component has not changed then Angular skips the entire branch.
+   For an Example: if card component has child components, those child components would not be checked for change detection if the course component did not have itself some changes pass to it.
+   Whole component branch get bypassed.
+
+   e. For @Input() data; JS objects are being compared that gets passed by object reference. As long @Input() data is get mutated by any other components, such as, parent component. So use immutable Objects TO Avoid this situation.
+
+   f. OnPush Detection does not hold memory slot in PC. Apparently faster but tricker.
